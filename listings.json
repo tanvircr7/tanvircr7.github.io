@@ -4,13 +4,13 @@
     "items": []
   },
   {
-    "listing": "/blog/posts/GRPO/GRPO-Huggingface.html",
+    "listing": "/blog/posts/grpo/index.html",
     "items": []
   },
   {
     "listing": "/blog/index.html",
     "items": [
-      "/blog/posts/GRPO/GRPO-Huggingface.html",
+      "/blog/posts/grpo/index.html",
       "/blog/posts/hello-world/index.html"
     ]
   },
