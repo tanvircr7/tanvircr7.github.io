@@ -305,6 +305,144 @@ But key differences make research optionality superior:</p>
   <pubDate>Sun, 28 Sep 2025 05:00:00 GMT</pubDate>
 </item>
 <item>
+  <title>Reflexion: Language Agents with Verbal Reinforcement Learning</title>
+  <link>https://tanvircr7.github.io/blog/posts/reflexion-verbalRL/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<blockquote class="blockquote">
+<p><strong>Traditional RL:</strong><br>
+- Requires extensive training samples<br>
+- Expensive fine-tuning</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>REFLEXION Approach:</strong><br>
+- Reinforcement through linguistic (verbal) feedback instead of rewards only</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Key Mechanism:</strong><br>
+- Agents reflect verbally on task feedback<br>
+- Maintain memory buffer of reflective text<br>
+- Several reflection styles tested<br>
+- Improves performance baseline</p>
+</blockquote>
+<p><strong>Result:</strong><br>
+- 91% pass@1 on HumanEval (code)<br>
+- Surpasses GPT (80%)<br>
+- <a href="https://github.com/noahshinn024/reflexion">Code and repo</a></p>
+<hr>
+</section>
+<section id="related-work" class="level2">
+<h2 class="anchored" data-anchor-id="related-work">Related Work</h2>
+<ul>
+<li>ReAct, SayCan, Toolformer, HuggingGPT, WebGPT<br>
+</li>
+<li>All: Actions learned in context<br>
+</li>
+<li>Problem: RL remains costly</li>
+</ul>
+<hr>
+</section>
+<section id="semantic-gradient-signal" class="level2">
+<h2 class="anchored" data-anchor-id="semantic-gradient-signal">Semantic Gradient Signal</h2>
+<ul>
+<li>Useful feedback = essential<br>
+</li>
+<li>Credit assignment = challenging<br>
+</li>
+<li>“Generating summary” = hard</li>
+</ul>
+<hr>
+</section>
+<section id="reflexion-feedback-mechanisms" class="level2">
+<h2 class="anchored" data-anchor-id="reflexion-feedback-mechanisms">Reflexion: Feedback Mechanisms</h2>
+<p><strong>Three feedback sources:</strong><br>
+1. Simple binary environmental feedback<br>
+2. Predefined heuristics<br>
+3. Self-evaluation (e.g., self-written unit tests in programming)</p>
+<ul>
+<li>All signals are <em>amplified</em> into natural language summary<br>
+</li>
+<li>Summary stored in long-term memory buffer</li>
+</ul>
+<hr>
+</section>
+<section id="why-reflexion-helps" class="level2">
+<h2 class="anchored" data-anchor-id="why-reflexion-helps">Why Reflexion Helps</h2>
+<ul>
+<li>Captures <em>nuanced</em> feedback<br>
+</li>
+<li>Provides interpretable episodic memory<br>
+</li>
+<li>Lite: Little supervision needed</li>
+</ul>
+<p><strong>Drawbacks:</strong><br>
+- Relies on self-eval quality<br>
+- No formal guarantee of success</p>
+<hr>
+</section>
+<section id="experiments" class="level2">
+<h2 class="anchored" data-anchor-id="experiments">Experiments</h2>
+<ul>
+<li>Decision-making, reasoning, programming tasks<br>
+</li>
+<li>Benchmarks:
+<ul>
+<li>AlfWorld: +22%<br>
+</li>
+<li>HotpotQA: +20%<br>
+</li>
+<li>HumanEval: +11%</li>
+</ul></li>
+</ul>
+<p><strong>Key achievement:</strong><br>
+- pass@1 improvement:<br>
+- HumanEval: 91% (vs.&nbsp;GPT 80%)</p>
+<hr>
+</section>
+<section id="ablation-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="ablation-analysis">Ablation + Analysis</h2>
+<ul>
+<li>Studies with different feedback signals<br>
+</li>
+<li>Examined methods of feedback incorporation<br>
+</li>
+<li>Compared agent types<br>
+</li>
+<li>Findings: Reflection/additional feedback directly impacts performance</li>
+</ul>
+<hr>
+</section>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further Reading</h2>
+<ul>
+<li><a href="https://github.com/noahshinn024/reflexion">Reflexion codebase and paper</a></li>
+</ul>
+
+
+
+</section>
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div> ]]></description>
+  <category>true</category>
+  <category>language-agents</category>
+  <category>reinforcement-learning</category>
+  <category>natural-language</category>
+  <category>feedback</category>
+  <guid>https://tanvircr7.github.io/blog/posts/reflexion-verbalRL/</guid>
+  <pubDate>Sun, 28 Sep 2025 05:00:00 GMT</pubDate>
+</item>
+<item>
   <title>GRPO - AVB</title>
   <link>https://tanvircr7.github.io/blog/posts/grpo/</link>
   <description><![CDATA[ 

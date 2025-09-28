@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-09-28">
+<meta name="description" content="Outline of Reflexion: RL language agents with episodic memory through reflection—summary of findings, results, and methodology.">
 
-<title>Blog – Tanvir Hasan</title>
+<title>Reflexion: Language Agents with Verbal Reinforcement Learning – Tanvir Hasan</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,29 +25,29 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3adfcd531744e6f441f8cef34e1acc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-af8de5c3824ba46c85aa2526d3b5271b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-3adfcd531744e6f441f8cef34e1acc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-3adfcd531744e6f441f8cef34e1acc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-af8de5c3824ba46c85aa2526d3b5271b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-3adfcd531744e6f441f8cef34e1acc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,9 +85,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: [{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: [],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -134,8 +136,8 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../styles.css">
-<link rel="alternate" type="application/rss+xml" title="Tanvir Hasan" href="index.xml" data-external="1"></head>
+<link rel="stylesheet" href="../../../styles.css">
+</head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
@@ -306,7 +308,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Tanvir Hasan</span>
     </a>
   </div>
@@ -317,25 +319,25 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../blog/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../notes/index.html"> 
+    <a class="nav-link" href="../../../notes/index.html"> 
 <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../taxonomy/index.html"> 
+    <a class="nav-link" href="../../../taxonomy/index.html"> 
 <span class="menu-text">Topics</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="../blog/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../../blog/index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -352,25 +354,53 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-cloud"><div class="category" data-category="YWdlbnRz"><span class="quarto-category-count category-cloud-2">agents</span></div><div class="category" data-category="YW50aWZyYWdpbGl0eQ=="><span class="quarto-category-count category-cloud-2">antifragility</span></div><div class="category" data-category="YXV0b21hdGVkLW1s"><span class="quarto-category-count category-cloud-2">automated-ml</span></div><div class="category" data-category="ZmVlZGJhY2s="><span class="quarto-category-count category-cloud-2">feedback</span></div><div class="category" data-category="Z3Jwbw=="><span class="quarto-category-count category-cloud-2">grpo</span></div><div class="category" data-category="aW5ub3ZhdGlvbg=="><span class="quarto-category-count category-cloud-2">innovation</span></div><div class="category" data-category="S2FnZ2xl"><span class="quarto-category-count category-cloud-2">Kaggle</span></div><div class="category" data-category="bGFuZ3VhZ2UtYWdlbnRz"><span class="quarto-category-count category-cloud-2">language-agents</span></div><div class="category" data-category="bWFjaGluZS1sZWFybmluZy1lbmdpbmVlcmluZw=="><span class="quarto-category-count category-cloud-2">machine-learning-engineering</span></div><div class="category" data-category="bWV0YQ=="><span class="quarto-category-count category-cloud-2">meta</span></div><div class="category" data-category="bmF0dXJhbC1sYW5ndWFnZQ=="><span class="quarto-category-count category-cloud-2">natural-language</span></div><div class="category" data-category="cmVpbmZvcmNlbWVudC1sZWFybmluZw=="><span class="quarto-category-count category-cloud-4">reinforcement-learning</span></div><div class="category" data-category="cmVzZWFyY2gtc3RyYXRlZ3k="><span class="quarto-category-count category-cloud-2">research-strategy</span></div><div class="category" data-category="c2V0dXA="><span class="quarto-category-count category-cloud-2">setup</span></div><div class="category" data-category="U1dFLWFnZW50cw=="><span class="quarto-category-count category-cloud-2">SWE-agents</span></div><div class="category" data-category="dHJ1ZQ=="><span class="quarto-category-count category-cloud-10">true</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#related-work" id="toc-related-work" class="nav-link" data-scroll-target="#related-work">Related Work</a></li>
+  <li><a href="#semantic-gradient-signal" id="toc-semantic-gradient-signal" class="nav-link" data-scroll-target="#semantic-gradient-signal">Semantic Gradient Signal</a></li>
+  <li><a href="#reflexion-feedback-mechanisms" id="toc-reflexion-feedback-mechanisms" class="nav-link" data-scroll-target="#reflexion-feedback-mechanisms">Reflexion: Feedback Mechanisms</a></li>
+  <li><a href="#why-reflexion-helps" id="toc-why-reflexion-helps" class="nav-link" data-scroll-target="#why-reflexion-helps">Why Reflexion Helps</a></li>
+  <li><a href="#experiments" id="toc-experiments" class="nav-link" data-scroll-target="#experiments">Experiments</a></li>
+  <li><a href="#ablation-analysis" id="toc-ablation-analysis" class="nav-link" data-scroll-target="#ablation-analysis">Ablation + Analysis</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further Reading</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/tanvircr7.github.io/blob/main/blog/posts/reflexion-verbalRL/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog</h1>
+<h1 class="title">Reflexion: Language Agents with Verbal Reinforcement Learning</h1>
   <div class="quarto-categories">
     <div class="quarto-category">true</div>
+    <div class="quarto-category">language-agents</div>
+    <div class="quarto-category">reinforcement-learning</div>
+    <div class="quarto-category">natural-language</div>
+    <div class="quarto-category">feedback</div>
   </div>
   </div>
 
+<div>
+  <div class="description">
+    Outline of Reflexion: RL language agents with episodic memory through reflection—summary of findings, results, and methodology.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 28, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -380,187 +410,124 @@ window.Quarto = {
 </header>
 
 
-<p>Browse my posts below.<br>
-Use categories/tags to filter topics.</p>
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<blockquote class="blockquote">
+<p><strong>Traditional RL:</strong><br>
+- Requires extensive training samples<br>
+- Expensive fine-tuning</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>REFLEXION Approach:</strong><br>
+- Reinforcement through linguistic (verbal) feedback instead of rewards only</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Key Mechanism:</strong><br>
+- Agents reflect verbally on task feedback<br>
+- Maintain memory buffer of reflective text<br>
+- Several reflection styles tested<br>
+- Improves performance baseline</p>
+</blockquote>
+<p><strong>Result:</strong><br>
+- 91% pass@1 on HumanEval (code)<br>
+- Surpasses GPT (80%)<br>
+- <a href="https://github.com/noahshinn024/reflexion">Code and repo</a></p>
+<hr>
+</section>
+<section id="related-work" class="level2">
+<h2 class="anchored" data-anchor-id="related-work">Related Work</h2>
+<ul>
+<li>ReAct, SayCan, Toolformer, HuggingGPT, WebGPT<br>
+</li>
+<li>All: Actions learned in context<br>
+</li>
+<li>Problem: RL remains costly</li>
+</ul>
+<hr>
+</section>
+<section id="semantic-gradient-signal" class="level2">
+<h2 class="anchored" data-anchor-id="semantic-gradient-signal">Semantic Gradient Signal</h2>
+<ul>
+<li>Useful feedback = essential<br>
+</li>
+<li>Credit assignment = challenging<br>
+</li>
+<li>“Generating summary” = hard</li>
+</ul>
+<hr>
+</section>
+<section id="reflexion-feedback-mechanisms" class="level2">
+<h2 class="anchored" data-anchor-id="reflexion-feedback-mechanisms">Reflexion: Feedback Mechanisms</h2>
+<p><strong>Three feedback sources:</strong><br>
+1. Simple binary environmental feedback<br>
+2. Predefined heuristics<br>
+3. Self-evaluation (e.g., self-written unit tests in programming)</p>
+<ul>
+<li>All signals are <em>amplified</em> into natural language summary<br>
+</li>
+<li>Summary stored in long-term memory buffer</li>
+</ul>
+<hr>
+</section>
+<section id="why-reflexion-helps" class="level2">
+<h2 class="anchored" data-anchor-id="why-reflexion-helps">Why Reflexion Helps</h2>
+<ul>
+<li>Captures <em>nuanced</em> feedback<br>
+</li>
+<li>Provides interpretable episodic memory<br>
+</li>
+<li>Lite: Little supervision needed</li>
+</ul>
+<p><strong>Drawbacks:</strong><br>
+- Relies on self-eval quality<br>
+- No formal guarantee of success</p>
+<hr>
+</section>
+<section id="experiments" class="level2">
+<h2 class="anchored" data-anchor-id="experiments">Experiments</h2>
+<ul>
+<li>Decision-making, reasoning, programming tasks<br>
+</li>
+<li>Benchmarks:
+<ul>
+<li>AlfWorld: +22%<br>
+</li>
+<li>HotpotQA: +20%<br>
+</li>
+<li>HumanEval: +11%</li>
+</ul></li>
+</ul>
+<p><strong>Key achievement:</strong><br>
+- pass@1 improvement:<br>
+- HumanEval: 91% (vs.&nbsp;GPT 80%)</p>
+<hr>
+</section>
+<section id="ablation-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="ablation-analysis">Ablation + Analysis</h2>
+<ul>
+<li>Studies with different feedback signals<br>
+</li>
+<li>Examined methods of feedback incorporation<br>
+</li>
+<li>Compared agent types<br>
+</li>
+<li>Findings: Reflection/additional feedback directly impacts performance</li>
+</ul>
+<hr>
+</section>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further Reading</h2>
+<ul>
+<li><a href="https://github.com/noahshinn024/reflexion">Reflexion codebase and paper</a></li>
+</ul>
 
 
 
+</section>
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="dHJ1ZSUyQ21hY2hpbmUtbGVhcm5pbmctZW5naW5lZXJpbmclMkNhdXRvbWF0ZWQtbWwlMkNhZ2VudHMlMkNTV0UtYWdlbnRzJTJDS2FnZ2xl" data-listing-date-sort="1759035600000" data-listing-file-modified-sort="1759041502461" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="454">
-<div class="thumbnail"><a href="../blog/posts/MLE-STAR/index.html" class="no-external">
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/MLE-STAR/index.html" class="no-external">MLE-STAR from Google</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJ1ZQ=='); return false;">true</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bWFjaGluZS1sZWFybmluZy1lbmdpbmVlcmluZw=='); return false;">machine-learning-engineering</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YXV0b21hdGVkLW1s'); return false;">automated-ml</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YWdlbnRz'); return false;">agents</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U1dFLWFnZW50cw=='); return false;">SWE-agents</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('S2FnZ2xl'); return false;">Kaggle</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/MLE-STAR/index.html" class="no-external">
-<p>MLE-STAR achieves 64% accuracy on MLE-bench through search-driven targeted refinement</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/MLE-STAR/index.html" class="no-external">
-<div class="listing-date">
-Sep 28, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="dHJ1ZSUyQ2FudGlmcmFnaWxpdHklMkNyZXNlYXJjaC1zdHJhdGVneSUyQ2lubm92YXRpb24=" data-listing-date-sort="1759035600000" data-listing-file-modified-sort="1759041895062" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="843">
-<div class="thumbnail"><a href="../blog/posts/convexity-taleb/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/convexity-taleb/index.html" class="no-external">Understanding Is a Poor Substitute for Convexity (Antifragility)</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJ1ZQ=='); return false;">true</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YW50aWZyYWdpbGl0eQ=='); return false;">antifragility</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVzZWFyY2gtc3RyYXRlZ3k='); return false;">research-strategy</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5ub3ZhdGlvbg=='); return false;">innovation</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/convexity-taleb/index.html" class="no-external">
-<p>A summary of research strategies that leverage convexity, optionality, and antifragility to exploit randomness for scientific and technological breakthroughs.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/convexity-taleb/index.html" class="no-external">
-<div class="listing-date">
-Sep 28, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="dHJ1ZSUyQ2xhbmd1YWdlLWFnZW50cyUyQ3JlaW5mb3JjZW1lbnQtbGVhcm5pbmclMkNuYXR1cmFsLWxhbmd1YWdlJTJDZmVlZGJhY2s=" data-listing-date-sort="1759035600000" data-listing-file-modified-sort="1759042141879" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="263">
-<div class="thumbnail"><a href="../blog/posts/reflexion-verbalRL/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/reflexion-verbalRL/index.html" class="no-external">Reflexion: Language Agents with Verbal Reinforcement Learning</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJ1ZQ=='); return false;">true</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bGFuZ3VhZ2UtYWdlbnRz'); return false;">language-agents</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVpbmZvcmNlbWVudC1sZWFybmluZw=='); return false;">reinforcement-learning</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmF0dXJhbC1sYW5ndWFnZQ=='); return false;">natural-language</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZmVlZGJhY2s='); return false;">feedback</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/reflexion-verbalRL/index.html" class="no-external">
-<p>Outline of Reflexion: RL language agents with episodic memory through reflection—summary of findings, results, and methodology.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/reflexion-verbalRL/index.html" class="no-external">
-<div class="listing-date">
-Sep 28, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="dHJ1ZSUyQ3JlaW5mb3JjZW1lbnQtbGVhcm5pbmclMkNncnBv" data-listing-date-sort="1756270800000" data-listing-file-modified-sort="1759029254361" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
-<div class="thumbnail"><a href="../blog/posts/grpo/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/grpo/index.html" class="no-external">GRPO - AVB</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJ1ZQ=='); return false;">true</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVpbmZvcmNlbWVudC1sZWFybmluZw=='); return false;">reinforcement-learning</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z3Jwbw=='); return false;">grpo</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/grpo/index.html" class="no-external">
-<p>Guide on generating task simulations for text-based RL and GRPO implementation</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/grpo/index.html" class="no-external">
-<div class="listing-date">
-Aug 27, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="dHJ1ZSUyQ21ldGElMkNzZXR1cA==" data-listing-date-sort="1756270800000" data-listing-file-modified-sort="1759025183114" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="30">
-<div class="thumbnail"><a href="../blog/posts/hello-world/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/hello-world/index.html" class="no-external">Hello, world</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJ1ZQ=='); return false;">true</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bWV0YQ=='); return false;">meta</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c2V0dXA='); return false;">setup</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/hello-world/index.html" class="no-external">
-<p>Kicking off my minimal site.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/hello-world/index.html" class="no-external">
-<div class="listing-date">
-Aug 27, 2025
-</div>
-</a>
-</div>
-</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->
@@ -984,7 +951,7 @@ Aug 27, 2025
     </div>   
     <div class="nav-footer-center">
 <p>© 2025 Mohammad Tanvir Hasan</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/tanvircr7.github.io/blob/main/blog/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tanvircr7.github.io/blob/main/blog/posts/reflexion-verbalRL/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
@@ -994,5 +961,5 @@ Aug 27, 2025
 
 
 
-<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
