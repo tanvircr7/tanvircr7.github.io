@@ -161,11 +161,11 @@
     "text": "Selected projects\n\nUALR Chatbot — RAG assistant for Admissions (LangGraph, Firebase, React, Docker).\n\nCorrective RAG — LangGraph + ChromaDB + Streamlit; web search backfill; live demo.\n\nMulti-Agent Recommendation System — AWS Bedrock supervisor w/ Lambda + S3.\n\nViT vs. CNN Image Classification — custom ViT vs EfficientNetB2; HuggingFace demo.\n\nUpliftt / Upliftt AI — Flutter app; AI integrations & guardrails."
   },
   {
-    "objectID": "index.html#publications-selected",
-    "href": "index.html#publications-selected",
+    "objectID": "index.html#publications",
+    "href": "index.html#publications",
     "title": "Tanvir Hasan",
-    "section": "Publications (selected)",
-    "text": "Publications (selected)\n\nData Trading System Using Blockchain with Oracle Network. EICT 2023.\n\nEnhancing E-Voting Security with Blockchain-Backed Decentralized Authorization. EICT 2023."
+    "section": "Publications",
+    "text": "Publications\n\nCXCL13 as a Prognostic Biomarker in Muscle-Invasive Bladder Cancer (MIBC) | in review\nData Trading System Using Blockchain with Oracle Network | EICT 2023\nEnhancing E-Voting Security with Blockchain-Backed Decentralized Authorization | EICT 2023"
   },
   {
     "objectID": "index.html#latest-posts",
