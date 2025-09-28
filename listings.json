@@ -4,18 +4,6 @@
     "items": []
   },
   {
-    "listing": "/blog/posts/hello-world/index.html",
-    "items": []
-  },
-  {
-    "listing": "/blog/posts/convexity-taleb/index.html",
-    "items": []
-  },
-  {
-    "listing": "/blog/posts/GEPA/index.html",
-    "items": []
-  },
-  {
     "listing": "/index.html",
     "items": [
       "/blog/posts/GEPA/index.html",
@@ -36,17 +24,5 @@
       "/blog/posts/grpo/index.html",
       "/blog/posts/hello-world/index.html"
     ]
-  },
-  {
-    "listing": "/blog/posts/MLE-STAR/index.html",
-    "items": []
-  },
-  {
-    "listing": "/blog/posts/grpo/index.html",
-    "items": []
-  },
-  {
-    "listing": "/blog/posts/reflexion-verbalRL/index.html",
-    "items": []
   }
 ]

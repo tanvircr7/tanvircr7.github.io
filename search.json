@@ -11,7 +11,7 @@
     "href": "blog/posts/hello-world/index.html",
     "title": "Hello, world",
     "section": "",
-    "text": "Welcome to my site!\nThis stack is intentionally simple:\n\nWrite posts in Markdown (.qmd or .md).\nLocal preview with quarto preview.\nPush to GitHub; GitHub Action builds and deploys to gh-pages.\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome to my site!\nThis stack is intentionally simple:\n\nWrite posts in Markdown (.qmd or .md).\nLocal preview with quarto preview.\nPush to GitHub; GitHub Action builds and deploys to gh-pages."
   },
   {
     "objectID": "blog/posts/convexity-taleb/index.html",
