@@ -327,54 +327,47 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- Optional hero with headshot -->
-<div class="role-card" style="justify-content:flex-start; border:none; padding-left:0;">
-<img src="images/profile.jpg" alt="Portrait of Tanvir Hasan" style="height:64px;border-radius:9999px; filter:none;">
-<div class="role-meta">
-<pre><code>&lt;div class="role-title"&gt;Hi, I’m Mohammad Tanvir Hasan&lt;/div&gt;
-&lt;div&gt;Researching multi-agent systems, steganography, and research automation (RAG/agentic workflows).&lt;/div&gt;
-&lt;div&gt;
-  &lt;a href="https://github.com/tanvircr7"&gt;GitHub&lt;/a&gt; ·
-  &lt;a href="https://www.linkedin.com/in/mdthasan"&gt;LinkedIn&lt;/a&gt; ·
-  &lt;a href="mailto:mthasan@ualr.edu"&gt;mthasan@ualr.edu&lt;/a&gt;
-&lt;/div&gt;</code></pre>
-</div>
+<div class="role-card" style="border:none; padding-left:0;">
+<p><img src="images/profile.jpg" style="border-radius:9999px; margin-right:12px;" height="64"></p>
+<p><strong>Hi, I’m Mohammad Tanvir Hasan</strong><br>
+Researching multi-agent systems, steganography, and research automation (RAG/agentic workflows).<br>
+<a href="https://github.com/tanvircr7">GitHub</a> · <a href="https://www.linkedin.com/in/mdthasan">LinkedIn</a> · <a href="mailto:mthasan@ualr.edu" class="email">mthasan@ualr.edu</a></p>
 </div>
 <section id="research-focus" class="level2">
 <h2 class="anchored" data-anchor-id="research-focus">Research focus</h2>
 <ul>
-<li><strong>Multi-agent systems</strong> · coordination &amp; evaluation</li>
-<li><strong>Steganography</strong> · robust/secure text &amp; image channels</li>
-<li><strong>AI for Science</strong> · reproducible workflows &amp; agents</li>
+<li><strong>Multi-agent systems</strong> · coordination &amp; evaluation<br>
+</li>
+<li><strong>Reinforcement Learning</strong> · Agentic RL</li>
+<li><strong>AI for Science</strong> · reproducible workflows &amp; agents<br>
+</li>
 <li><strong>Security</strong> · model + data pipeline hardening</li>
 </ul>
 </section>
 <section id="positions" class="level2">
 <h2 class="anchored" data-anchor-id="positions">Positions</h2>
 <div class="role-card">
-<img src="images/emory_gt.png" alt="Georgia Tech logo">
-<div class="role-meta">
-<pre><code>&lt;div class="role-title"&gt;Research Intern&lt;/div&gt;
-&lt;div class="role-inst"&gt;Madabushi Lab, Georgia Tech &amp;amp; Emory&lt;/div&gt;
-&lt;div&gt;Working on multi-agent evaluation and secure communication in agent systems.&lt;/div&gt;</code></pre>
-</div>
+<p><img src="images/gatech.png" height="40"> <strong>Research Intern</strong><br>
+<em>Madabushi Lab, Georgia Tech &amp; Emory</em><br>
+Working on multi-agent evaluation and secure communication in agent systems.</p>
 </div>
 <div class="role-card">
-<img src="images/ualr.png" alt="UALR logo">
-<div class="role-meta">
-<pre><code>&lt;div class="role-title"&gt;Graduate Assistant&lt;/div&gt;
-&lt;div class="role-inst"&gt;University of Arkansas at Little Rock&lt;/div&gt;
-&lt;div&gt;Research automation tooling and RAG infrastructure for academic workflows.&lt;/div&gt;</code></pre>
-</div>
+<p><img src="images/ualr.png" height="40"> <strong>Graduate Assistant</strong><br>
+<em>University of Arkansas at Little Rock</em><br>
+Research automation tooling and RAG infrastructure for academic workflows.</p>
 </div>
 </section>
 <section id="selected-projects" class="level2">
 <h2 class="anchored" data-anchor-id="selected-projects">Selected projects</h2>
 <ul>
-<li><strong>UALR Chatbot</strong> — RAG assistant for Admissions (LangGraph, Firebase, React, Docker).</li>
-<li><strong>Corrective RAG</strong> — LangGraph + ChromaDB + Streamlit; web search backfill; <a href="https://tanvir-corrective-rag.streamlit.app/">live demo</a>.</li>
-<li><strong>Multi-Agent Recommendation System</strong> — AWS Bedrock supervisor w/ Lambda + S3.</li>
-<li><strong>ViT vs.&nbsp;CNN Image Classification</strong> — custom ViT vs EfficientNetB2; <a href="https://huggingface.co/spaces/tanvircr7/foodvision">HuggingFace demo</a>.</li>
+<li><strong>UALR Chatbot</strong> — RAG assistant for Admissions (LangGraph, Firebase, React, Docker).<br>
+</li>
+<li><strong>Corrective RAG</strong> — LangGraph + ChromaDB + Streamlit; web search backfill; <a href="https://tanvir-corrective-rag.streamlit.app/">live demo</a>.<br>
+</li>
+<li><strong>Multi-Agent Recommendation System</strong> — AWS Bedrock supervisor w/ Lambda + S3.<br>
+</li>
+<li><strong>ViT vs.&nbsp;CNN Image Classification</strong> — custom ViT vs EfficientNetB2; <a href="https://huggingface.co/spaces/tanvircr7/foodvision">HuggingFace demo</a>.<br>
+</li>
 <li><strong>Upliftt / Upliftt AI</strong> — Flutter app; AI integrations &amp; guardrails.</li>
 </ul>
 </section>
@@ -388,16 +381,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="latest-posts" class="level2">
 <h2 class="anchored" data-anchor-id="latest-posts">Latest posts</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
 <p>A few recent notes and writing.</p>
-</div><div class="column" style="width:30%;">
-<p><a href="./blog/index.html">All posts →</a></p>
-</div>
-</div>
-<div id="post-cards" class="cards" cols="3">
-{{&lt; listing     path="blog/posts"     sort="date desc"     max-items=3     type="default" &gt;}}
-</div>
+<p>```{.include} # Quarto directive-style listing (no shortcodes) {{&lt; listing path="blog/posts" sort="date desc" max-items=3 type="default" &gt;}}</p>
 
 
 </section>
