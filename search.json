@@ -56,11 +56,74 @@
     "text": "GRPO from Scratch\nGRPO from Scratch"
   },
   {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
+    "objectID": "blog/posts/MLE-STAR/index.html",
+    "href": "blog/posts/MLE-STAR/index.html",
+    "title": "MLE-STAR from Google",
     "section": "",
-    "text": "Browse my posts below.\nUse categories/tags to filter topics.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nMLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement\n\n\n\ntrue\n\nmachine-learning-engineering\n\nautomated-ml\n\nagents\n\nSWE-agents\n\nKaggle\n\n\n\nMLE-STAR achieves 64% accuracy on MLE-bench through search-driven targeted refinement\n\n\n\n\n\nSep 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nGRPO - AVB\n\n\n\ntrue\n\nreinforcement-learning\n\ngrpo\n\n\n\nGuide on generating task simulations for text-based RL and GRPO implementation\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nHello, world\n\n\n\ntrue\n\nmeta\n\nsetup\n\n\n\nKicking off my minimal site.\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\nNo matching items"
+    "text": "Agents can auto implement models via code generation.\nBut existing ways use: - Inherent knowledge - Coarse exploration strategies (modify code structure AT ONCE) - Limits ability to select task specific models - Limits deep exploration within specific components (deeper on feature engineering)\nMLE-STAR: - External knowledge via search engine - Forms initial solution - Refines it by targeting specific components - Exploration from Ablation Studies - Novel ensembling method (suggested by MLE-STAR itself)\nResults: MLE-bench Lite (kaggle comps) acc 64%"
+  },
+  {
+    "objectID": "blog/posts/MLE-STAR/index.html#abstract",
+    "href": "blog/posts/MLE-STAR/index.html#abstract",
+    "title": "MLE-STAR from Google",
+    "section": "",
+    "text": "Agents can auto implement models via code generation.\nBut existing ways use: - Inherent knowledge - Coarse exploration strategies (modify code structure AT ONCE) - Limits ability to select task specific models - Limits deep exploration within specific components (deeper on feature engineering)\nMLE-STAR: - External knowledge via search engine - Forms initial solution - Refines it by targeting specific components - Exploration from Ablation Studies - Novel ensembling method (suggested by MLE-STAR itself)\nResults: MLE-bench Lite (kaggle comps) acc 64%"
+  },
+  {
+    "objectID": "blog/posts/MLE-STAR/index.html#introduction",
+    "href": "blog/posts/MLE-STAR/index.html#introduction",
+    "title": "MLE-STAR from Google",
+    "section": "Introduction",
+    "text": "Introduction\nMLE agents: (Guo et al., 2024; Hong et al., 2024; Jiang et al., 2025)\nEvaluated on: MLE-bench’s Kaggle competitions (Chan et al., 2025)\nBeats: - Jiang et al 2025 - AIDE - Guo et al. 2024 - DS Agent"
+  },
+  {
+    "objectID": "blog/posts/MLE-STAR/index.html#the-core-idea",
+    "href": "blog/posts/MLE-STAR/index.html#the-core-idea",
+    "title": "MLE-STAR from Google",
+    "section": "1. The Core Idea",
+    "text": "1. The Core Idea\nSearch-assisted knowledge + Component-wise optimization + Smart ensembling"
+  },
+  {
+    "objectID": "blog/posts/MLE-STAR/index.html#the-process-flow",
+    "href": "blog/posts/MLE-STAR/index.html#the-process-flow",
+    "title": "MLE-STAR from Google",
+    "section": "2. The Process Flow",
+    "text": "2. The Process Flow\n\nInitial Code Generation\n\nCreates first attempt at solution\nUses Google Search to look up modern, relevant ML techniques for that problem type\n\n\n\nIdentify Most Important Code Components\nCode components: data preprocessing, feature engineering, model architecture, ensemble building\nAblation study approach: - “Turn off or replace one component at a time” - “See how much performance drops” - “The one that hurts performance most = most important”\n\n\nTargeted Code Refinement\n\nPicks most impactful component\nSearches for ways to improve ONLY that part (not rewriting everything)\n\nImprovement ideas from: - Past failed attempts (learning from mistakes) - Search results - New code generation\n\n\nRepeat for Other Components\n\nAfter improving one part → moves to another\nCycle continues until results stop improving significantly\n\n\n\nEnsembling\nNormal ensembling: Combining multiple trained models (voting, averaging, stacking)\nMLE-STAR approach: - Generates multiple complete solutions - Designs its own ensemble method to merge them (not basic “majority vote”) - Tests and refines ensemble method iteratively"
+  },
+  {
+    "objectID": "blog/posts/MLE-STAR/index.html#why-this-is-special",
+    "href": "blog/posts/MLE-STAR/index.html#why-this-is-special",
+    "title": "MLE-STAR from Google",
+    "section": "3. Why This Is Special",
+    "text": "3. Why This Is Special\n\nSearch-assisted: Doesn’t rely only on built-in knowledge → actively pulls from internet\nComponent-wise optimization: Most systems try to improve everything at once; MLE-STAR focuses on parts that matter most\nSmart ensembling: Custom combination methods vs “one model to rule them all”\nPerformance proof: More than doubled rate of top-medal finishes vs previous best baseline"
+  },
+  {
+    "objectID": "blog/posts/MLE-STAR/index.html#key-terms",
+    "href": "blog/posts/MLE-STAR/index.html#key-terms",
+    "title": "MLE-STAR from Google",
+    "section": "4. Key Terms",
+    "text": "4. Key Terms\n\nEnsembling: Combining multiple models’ predictions to improve accuracy\nAblation study: Testing component importance by removing/altering it and measuring performance change\nFeature engineering: Creating/transforming input features to help model learn better\nPipeline component: Modular part of ML workflow (preprocessing, model, post-processing)\nRefinement: Iteratively improving specific code parts vs rewriting whole thing"
+  },
+  {
+    "objectID": "blog/posts/MLE-STAR/index.html#related-work",
+    "href": "blog/posts/MLE-STAR/index.html#related-work",
+    "title": "MLE-STAR from Google",
+    "section": "Related Work",
+    "text": "Related Work\n\nReAct (Yao) - Reasoning + Action\nHuggingGPT (Shen) - Multi-agent orchestration\nVoyager - Minecraft exploration strategies\nAlphaCode - Code generation\nAutoML - Predefined search spaces need domain knowledge\nMLAB (Huang) - ML automation\nOpenHands (Wang) - Code agents\nAIDE (Jiang) - Candidate solutions in tree structure\nDS-Agent - Case-based reasoning for Kaggle\n\nNeed: Effective exploration strategies directly in Code Space"
+  },
+  {
+    "objectID": "blog/posts/MLE-STAR/index.html#results",
+    "href": "blog/posts/MLE-STAR/index.html#results",
+    "title": "MLE-STAR from Google",
+    "section": "Results",
+    "text": "Results\n64% accuracy on MLE-bench Lite Kaggle competitions\nBeats existing baselines including AIDE and DS-Agent\nMore than doubled rate of top-medal finishes"
+  },
+  {
+    "objectID": "notes/index.html",
+    "href": "notes/index.html",
+    "title": "Notes",
+    "section": "",
+    "text": "Quick notes and scratchpads:\n\nKeep short, linkable snippets here.\nUse folders in notes/ if you want multiple pages."
   },
   {
     "objectID": "index.html",
@@ -105,74 +168,67 @@
     "text": "Latest posts\nA few recent notes and writing.\n\n\nlisting: contents: blog/posts sort: “date desc” max-items: 3 type: default\n\n\nBuilt with Quarto and deployed on GitHub Pages."
   },
   {
-    "objectID": "notes/index.html",
-    "href": "notes/index.html",
-    "title": "Notes",
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
     "section": "",
-    "text": "Quick notes and scratchpads:\n\nKeep short, linkable snippets here.\nUse folders in notes/ if you want multiple pages."
+    "text": "Browse my posts below.\nUse categories/tags to filter topics.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nMLE-STAR from Google\n\n\n\ntrue\n\nmachine-learning-engineering\n\nautomated-ml\n\nagents\n\nSWE-agents\n\nKaggle\n\n\n\nMLE-STAR achieves 64% accuracy on MLE-bench through search-driven targeted refinement\n\n\n\n\n\nSep 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding Is a Poor Substitute for Convexity (Antifragility)\n\n\n\ntrue\n\nantifragility\n\nresearch-strategy\n\ninnovation\n\n\n\nA summary of research strategies that leverage convexity, optionality, and antifragility to exploit randomness for scientific and technological breakthroughs.\n\n\n\n\n\nSep 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nGRPO - AVB\n\n\n\ntrue\n\nreinforcement-learning\n\ngrpo\n\n\n\nGuide on generating task simulations for text-based RL and GRPO implementation\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nHello, world\n\n\n\ntrue\n\nmeta\n\nsetup\n\n\n\nKicking off my minimal site.\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "blog/posts/MLE-STAR/index.html",
-    "href": "blog/posts/MLE-STAR/index.html",
-    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+    "objectID": "blog/posts/convexity-taleb/index.html",
+    "href": "blog/posts/convexity-taleb/index.html",
+    "title": "Understanding Is a Poor Substitute for Convexity (Antifragility)",
     "section": "",
-    "text": "Agents can auto implement models via code generation.\nBut existing ways use: - Inherent knowledge - Coarse exploration strategies (modify code structure AT ONCE) - Limits ability to select task specific models - Limits deep exploration within specific components (deeper on feature engineering)\nMLE-STAR: - External knowledge via search engine - Forms initial solution - Refines it by targeting specific components - Exploration from Ablation Studies - Novel ensembling method (suggested by MLE-STAR itself)\nResults: MLE-bench Lite (kaggle comps) acc 64%"
+    "text": "Did you just get lucky or was it your aim?\nLinear, teleological success stories fit physics.\nIn opaque, nonlinear fields (medicine, engineering), chance drives more breakthroughs.\nStill, we build research programs around stories and direction—despite knowing better.\n\nKey Point:\nChance alone can’t yield steady progress—unless the payoff function is asymmetric. Nonlinear payoffs let us systematically benefit from randomness.\n\nWelcome uncertainty in the long run. It can hurt you less than it helps you."
   },
   {
-    "objectID": "blog/posts/MLE-STAR/index.html#abstract",
-    "href": "blog/posts/MLE-STAR/index.html#abstract",
-    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+    "objectID": "blog/posts/convexity-taleb/index.html#introduction-missing-the-asymmetry",
+    "href": "blog/posts/convexity-taleb/index.html#introduction-missing-the-asymmetry",
+    "title": "Understanding Is a Poor Substitute for Convexity (Antifragility)",
     "section": "",
-    "text": "Agents can auto implement models via code generation.\nBut existing ways use: - Inherent knowledge - Coarse exploration strategies (modify code structure AT ONCE) - Limits ability to select task specific models - Limits deep exploration within specific components (deeper on feature engineering)\nMLE-STAR: - External knowledge via search engine - Forms initial solution - Refines it by targeting specific components - Exploration from Ablation Studies - Novel ensembling method (suggested by MLE-STAR itself)\nResults: MLE-bench Lite (kaggle comps) acc 64%"
+    "text": "Did you just get lucky or was it your aim?\nLinear, teleological success stories fit physics.\nIn opaque, nonlinear fields (medicine, engineering), chance drives more breakthroughs.\nStill, we build research programs around stories and direction—despite knowing better.\n\nKey Point:\nChance alone can’t yield steady progress—unless the payoff function is asymmetric. Nonlinear payoffs let us systematically benefit from randomness.\n\nWelcome uncertainty in the long run. It can hurt you less than it helps you."
   },
   {
-    "objectID": "blog/posts/MLE-STAR/index.html#introduction",
-    "href": "blog/posts/MLE-STAR/index.html#introduction",
-    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-    "section": "Introduction",
-    "text": "Introduction\nMLE agents: (Guo et al., 2024; Hong et al., 2024; Jiang et al., 2025)\nEvaluated on: MLE-bench’s Kaggle competitions (Chan et al., 2025)\nBeats: - Jiang et al 2025 - AIDE - Guo et al. 2024 - DS Agent"
+    "objectID": "blog/posts/convexity-taleb/index.html#opaque-systems-and-optionality",
+    "href": "blog/posts/convexity-taleb/index.html#opaque-systems-and-optionality",
+    "title": "Understanding Is a Poor Substitute for Convexity (Antifragility)",
+    "section": "Opaque Systems and Optionality",
+    "text": "Opaque Systems and Optionality\n\nTrial and error + convexity = real progress\nIn experiments (cooking, science), keep what works, discard what doesn’t.\nWe have the option (not the obligation) to retain only favorable results.\nThis “optionality”—the ability to choose after the fact—lies behind convex research payoffs.\n\n\nOptionality liberates us from inflexible roadmaps, predictions, and stories.\n\nSome research results have abnormally large long-term impact (penicillin, black swans, GPT-5 scale events).\n\n\nAnalogy: Research vs. Financial Options\n\nResearch is like running many small, cheap experiments (like owning lots of “call options”).\nFailures cost little; one big win changes everything.\nIn finance, option buyers pay a premium and the game is zero-sum.\nIn research, no one sells you upside or limits your payoff:\n\nOne discovery grows the overall pie of knowledge, not just shifting value between players."
   },
   {
-    "objectID": "blog/posts/MLE-STAR/index.html#the-core-idea",
-    "href": "blog/posts/MLE-STAR/index.html#the-core-idea",
-    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-    "section": "1. The Core Idea",
-    "text": "1. The Core Idea\nSearch-assisted knowledge + Component-wise optimization + Smart ensembling"
+    "objectID": "blog/posts/convexity-taleb/index.html#why-uncertainty-is-valuable",
+    "href": "blog/posts/convexity-taleb/index.html#why-uncertainty-is-valuable",
+    "title": "Understanding Is a Poor Substitute for Convexity (Antifragility)",
+    "section": "Why Uncertainty Is Valuable",
+    "text": "Why Uncertainty Is Valuable\n\nWhich projects should be funded?\n\nMathematical Principle: In convex systems, both convexity (asymmetry of payoff) and volatility (randomness) work in your favor.\n\nGains &gt; Harms if the payoff is asymmetric.\n\n\nConvexity Bias (Jensen’s Inequality)\n\nSuppose a coin:\n\nLinear: win $1, lose $1. EV = $0.\nConvex: win $10, lose $1. EV = +$4.5.\nThe more convex the scenario, the higher the built-in advantage.\n\nJensen’s inequality: Convex functions benefit from randomness.\n\nBottom Line:\n- The more convex the payoff, and the more uncertain the environment, the greater the net expected gain."
   },
   {
-    "objectID": "blog/posts/MLE-STAR/index.html#the-process-flow",
-    "href": "blog/posts/MLE-STAR/index.html#the-process-flow",
-    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-    "section": "2. The Process Flow",
-    "text": "2. The Process Flow\n\nInitial Code Generation\n\nCreates first attempt at solution\nUses Google Search to look up modern, relevant ML techniques for that problem type\n\n\n\nIdentify Most Important Code Components\nCode components: data preprocessing, feature engineering, model architecture, ensemble building\nAblation study approach: - “Turn off or replace one component at a time” - “See how much performance drops” - “The one that hurts performance most = most important”\n\n\nTargeted Code Refinement\n\nPicks most impactful component\nSearches for ways to improve ONLY that part (not rewriting everything)\n\nImprovement ideas from: - Past failed attempts (learning from mistakes) - Search results - New code generation\n\n\nRepeat for Other Components\n\nAfter improving one part → moves to another\nCycle continues until results stop improving significantly\n\n\n\nEnsembling\nNormal ensembling: Combining multiple trained models (voting, averaging, stacking)\nMLE-STAR approach: - Generates multiple complete solutions - Designs its own ensemble method to merge them (not basic “majority vote”) - Tests and refines ensemble method iteratively"
+    "objectID": "blog/posts/convexity-taleb/index.html#antifragility-benefiting-from-disorder",
+    "href": "blog/posts/convexity-taleb/index.html#antifragility-benefiting-from-disorder",
+    "title": "Understanding Is a Poor Substitute for Convexity (Antifragility)",
+    "section": "Antifragility: Benefiting From Disorder",
+    "text": "Antifragility: Benefiting From Disorder\n\nFragile things dislike volatility (coffee cups).\nAntifragile things love volatility (evolution, discovery).\nConvexity bias (not mere luck) can be defined, measured, and used to guide research funding."
   },
   {
-    "objectID": "blog/posts/MLE-STAR/index.html#why-this-is-special",
-    "href": "blog/posts/MLE-STAR/index.html#why-this-is-special",
-    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-    "section": "3. Why This Is Special",
-    "text": "3. Why This Is Special\n\nSearch-assisted: Doesn’t rely only on built-in knowledge → actively pulls from internet\nComponent-wise optimization: Most systems try to improve everything at once; MLE-STAR focuses on parts that matter most\nSmart ensembling: Custom combination methods vs “one model to rule them all”\nPerformance proof: More than doubled rate of top-medal finishes vs previous best baseline"
+    "objectID": "blog/posts/convexity-taleb/index.html#is-all-this-just-lottery-thinking",
+    "href": "blog/posts/convexity-taleb/index.html#is-all-this-just-lottery-thinking",
+    "title": "Understanding Is a Poor Substitute for Convexity (Antifragility)",
+    "section": "Is All This Just Lottery Thinking?",
+    "text": "Is All This Just Lottery Thinking?\nCritics say: “This sounds like buying lottery tickets.”\nBut key differences make research optionality superior:\n\nYou control your “ticket price” and can lower trial costs.\nUpside in research can be unlimited; lotteries have capped payoffs.\nYou keep only winnings and cut losses via optionality.\nLearning and adaptation can increase your odds over time (lotteries are static).\nDiversification (many independent tries) raises expected value—unlike buying more lottery tickets.\nResearch creates positive-sum value (society wins); lotteries are zero-sum with a house edge.\nHits spawn new opportunities; lottery wins don’t.\n\nQuick Math: - 100 research trials × $1 = $100 spent; if one scores $200 and rest fail, EV = +$101. - 100 lottery tickets × $1 = $100; average return $0.60 per ticket: EV = −$40.\nTo avoid “lottery-like” waste: - Keep trials cheap - Ensure upside is not capped - Avoid correlated bets - Learn as you go and cut losses fast"
   },
   {
-    "objectID": "blog/posts/MLE-STAR/index.html#key-terms",
-    "href": "blog/posts/MLE-STAR/index.html#key-terms",
-    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-    "section": "4. Key Terms",
-    "text": "4. Key Terms\n\nEnsembling: Combining multiple models’ predictions to improve accuracy\nAblation study: Testing component importance by removing/altering it and measuring performance change\nFeature engineering: Creating/transforming input features to help model learn better\nPipeline component: Modular part of ML workflow (preprocessing, model, post-processing)\nRefinement: Iteratively improving specific code parts vs rewriting whole thing"
+    "objectID": "blog/posts/convexity-taleb/index.html#appendix-visual-intuitions",
+    "href": "blog/posts/convexity-taleb/index.html#appendix-visual-intuitions",
+    "title": "Understanding Is a Poor Substitute for Convexity (Antifragility)",
+    "section": "Appendix: Visual Intuitions",
+    "text": "Appendix: Visual Intuitions\n\nFat vs. thin tails: Rarer outcomes matter much more in fat-tailed systems.\nRight tail (lognormal): Small set of rare wins dominate value.\nLeft tail (negative events): Most events harmless, but must cap rare disasters.\nOperations: Tails, not averages, dictate most real-life quality (e.g., user pain in computing).\n\nRule of thumb: Cap the left tail (risks), keep the right tail (potential)."
   },
   {
-    "objectID": "blog/posts/MLE-STAR/index.html#related-work",
-    "href": "blog/posts/MLE-STAR/index.html#related-work",
-    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-    "section": "Related Work",
-    "text": "Related Work\n\nReAct (Yao) - Reasoning + Action\nHuggingGPT (Shen) - Multi-agent orchestration\nVoyager - Minecraft exploration strategies\nAlphaCode - Code generation\nAutoML - Predefined search spaces need domain knowledge\nMLAB (Huang) - ML automation\nOpenHands (Wang) - Code agents\nAIDE (Jiang) - Candidate solutions in tree structure\nDS-Agent - Case-based reasoning for Kaggle\n\nNeed: Effective exploration strategies directly in Code Space"
-  },
-  {
-    "objectID": "blog/posts/MLE-STAR/index.html#results",
-    "href": "blog/posts/MLE-STAR/index.html#results",
-    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
-    "section": "Results",
-    "text": "Results\n64% accuracy on MLE-bench Lite Kaggle competitions\nBeats existing baselines including AIDE and DS-Agent\nMore than doubled rate of top-medal finishes"
+    "objectID": "blog/posts/convexity-taleb/index.html#references",
+    "href": "blog/posts/convexity-taleb/index.html#references",
+    "title": "Understanding Is a Poor Substitute for Convexity (Antifragility)",
+    "section": "References",
+    "text": "References\nCites works by Jacob (1977), Bachelier (1900), Jensen (1906), Taleb & Douady (2013), Mokyr (2002), Kealey (1996), and others—see original text for full list."
   },
   {
     "objectID": "blog/posts/hello-world/index.html",

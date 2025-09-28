@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-09-28">
+<meta name="description" content="A summary of research strategies that leverage convexity, optionality, and antifragility to exploit randomness for scientific and technological breakthroughs.">
 
-<title>Blog – Tanvir Hasan</title>
+<title>Understanding Is a Poor Substitute for Convexity (Antifragility) – Tanvir Hasan</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,29 +25,29 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3adfcd531744e6f441f8cef34e1acc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-af8de5c3824ba46c85aa2526d3b5271b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-3adfcd531744e6f441f8cef34e1acc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-3adfcd531744e6f441f8cef34e1acc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-af8de5c3824ba46c85aa2526d3b5271b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-3adfcd531744e6f441f8cef34e1acc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,9 +85,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: [{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: [],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -134,8 +136,8 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../styles.css">
-<link rel="alternate" type="application/rss+xml" title="Tanvir Hasan" href="index.xml" data-external="1"></head>
+<link rel="stylesheet" href="../../../styles.css">
+</head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
@@ -306,7 +308,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Tanvir Hasan</span>
     </a>
   </div>
@@ -317,25 +319,25 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../blog/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../notes/index.html"> 
+    <a class="nav-link" href="../../../notes/index.html"> 
 <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../taxonomy/index.html"> 
+    <a class="nav-link" href="../../../taxonomy/index.html"> 
 <span class="menu-text">Topics</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="../blog/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../../blog/index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -352,25 +354,60 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-cloud"><div class="category" data-category="YWdlbnRz"><span class="quarto-category-count category-cloud-3">agents</span></div><div class="category" data-category="YW50aWZyYWdpbGl0eQ=="><span class="quarto-category-count category-cloud-3">antifragility</span></div><div class="category" data-category="YXV0b21hdGVkLW1s"><span class="quarto-category-count category-cloud-3">automated-ml</span></div><div class="category" data-category="Z3Jwbw=="><span class="quarto-category-count category-cloud-3">grpo</span></div><div class="category" data-category="aW5ub3ZhdGlvbg=="><span class="quarto-category-count category-cloud-3">innovation</span></div><div class="category" data-category="S2FnZ2xl"><span class="quarto-category-count category-cloud-3">Kaggle</span></div><div class="category" data-category="bWFjaGluZS1sZWFybmluZy1lbmdpbmVlcmluZw=="><span class="quarto-category-count category-cloud-3">machine-learning-engineering</span></div><div class="category" data-category="bWV0YQ=="><span class="quarto-category-count category-cloud-3">meta</span></div><div class="category" data-category="cmVpbmZvcmNlbWVudC1sZWFybmluZw=="><span class="quarto-category-count category-cloud-3">reinforcement-learning</span></div><div class="category" data-category="cmVzZWFyY2gtc3RyYXRlZ3k="><span class="quarto-category-count category-cloud-3">research-strategy</span></div><div class="category" data-category="c2V0dXA="><span class="quarto-category-count category-cloud-3">setup</span></div><div class="category" data-category="U1dFLWFnZW50cw=="><span class="quarto-category-count category-cloud-3">SWE-agents</span></div><div class="category" data-category="dHJ1ZQ=="><span class="quarto-category-count category-cloud-10">true</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-missing-the-asymmetry" id="toc-introduction-missing-the-asymmetry" class="nav-link active" data-scroll-target="#introduction-missing-the-asymmetry">Introduction: Missing the Asymmetry</a></li>
+  <li><a href="#opaque-systems-and-optionality" id="toc-opaque-systems-and-optionality" class="nav-link" data-scroll-target="#opaque-systems-and-optionality">Opaque Systems and Optionality</a>
+  <ul class="collapse">
+  <li><a href="#analogy-research-vs.-financial-options" id="toc-analogy-research-vs.-financial-options" class="nav-link" data-scroll-target="#analogy-research-vs.-financial-options">Analogy: Research vs.&nbsp;Financial Options</a></li>
+  </ul></li>
+  <li><a href="#why-uncertainty-is-valuable" id="toc-why-uncertainty-is-valuable" class="nav-link" data-scroll-target="#why-uncertainty-is-valuable">Why Uncertainty Is Valuable</a>
+  <ul class="collapse">
+  <li><a href="#convexity-bias-jensens-inequality" id="toc-convexity-bias-jensens-inequality" class="nav-link" data-scroll-target="#convexity-bias-jensens-inequality">Convexity Bias (Jensen’s Inequality)</a></li>
+  </ul></li>
+  <li><a href="#antifragility-benefiting-from-disorder" id="toc-antifragility-benefiting-from-disorder" class="nav-link" data-scroll-target="#antifragility-benefiting-from-disorder">Antifragility: Benefiting From Disorder</a></li>
+  <li><a href="#seven-rules-of-antifragile-convex-research" id="toc-seven-rules-of-antifragile-convex-research" class="nav-link" data-scroll-target="#seven-rules-of-antifragile-convex-research">Seven Rules of Antifragile (Convex) Research</a>
+  <ul class="collapse">
+  <li><a href="#is-all-this-just-lottery-thinking" id="toc-is-all-this-just-lottery-thinking" class="nav-link" data-scroll-target="#is-all-this-just-lottery-thinking">Is All This Just Lottery Thinking?</a></li>
+  <li><a href="#appendix-visual-intuitions" id="toc-appendix-visual-intuitions" class="nav-link" data-scroll-target="#appendix-visual-intuitions">Appendix: Visual Intuitions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/tanvircr7.github.io/blob/main/blog/posts/convexity-taleb/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog</h1>
+<h1 class="title">Understanding Is a Poor Substitute for Convexity (Antifragility)</h1>
   <div class="quarto-categories">
     <div class="quarto-category">true</div>
+    <div class="quarto-category">antifragility</div>
+    <div class="quarto-category">research-strategy</div>
+    <div class="quarto-category">innovation</div>
   </div>
   </div>
 
+<div>
+  <div class="description">
+    A summary of research strategies that leverage convexity, optionality, and antifragility to exploit randomness for scientific and technological breakthroughs.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 28, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -380,152 +417,160 @@ window.Quarto = {
 </header>
 
 
-<p>Browse my posts below.<br>
-Use categories/tags to filter topics.</p>
+<section id="introduction-missing-the-asymmetry" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-missing-the-asymmetry">Introduction: Missing the Asymmetry</h2>
+<blockquote class="blockquote">
+<p>Did you just get lucky or was it your aim?<br>
+Linear, teleological success stories fit physics.<br>
+In opaque, nonlinear fields (medicine, engineering), chance drives more breakthroughs.<br>
+Still, we build research programs around stories and direction—despite knowing better.</p>
+</blockquote>
+<p><strong>Key Point:</strong><br>
+Chance alone can’t yield steady progress—unless the payoff function is asymmetric. Nonlinear payoffs let us systematically benefit from randomness.</p>
+<ul>
+<li><em>Welcome uncertainty in the long run. It can hurt you less than it helps you.</em></li>
+</ul>
+</section>
+<section id="opaque-systems-and-optionality" class="level2">
+<h2 class="anchored" data-anchor-id="opaque-systems-and-optionality">Opaque Systems and Optionality</h2>
+<blockquote class="blockquote">
+<p>Trial and error + convexity = real progress<br>
+In experiments (cooking, science), keep what works, discard what doesn’t.<br>
+We <em>have the option</em> (not <em>the obligation</em>) to retain only favorable results.<br>
+This “optionality”—the ability to choose after the fact—lies behind convex research payoffs.</p>
+</blockquote>
+<ul>
+<li><em>Optionality liberates us from inflexible roadmaps, predictions, and stories.</em><br>
+</li>
+<li>Some research results have abnormally large long-term impact (penicillin, black swans, GPT-5 scale events).</li>
+</ul>
+<section id="analogy-research-vs.-financial-options" class="level3">
+<h3 class="anchored" data-anchor-id="analogy-research-vs.-financial-options">Analogy: Research vs.&nbsp;Financial Options</h3>
+<ul>
+<li>Research is like running many small, cheap experiments (like owning lots of “call options”).</li>
+<li>Failures cost little; one big win changes everything.</li>
+<li>In finance, option buyers pay a premium and the game is zero-sum.</li>
+<li>In research, <em>no one</em> sells you upside or limits your payoff:
+<ul>
+<li>One discovery grows the overall pie of knowledge, not just shifting value between players.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="why-uncertainty-is-valuable" class="level2">
+<h2 class="anchored" data-anchor-id="why-uncertainty-is-valuable">Why Uncertainty Is Valuable</h2>
+<ul>
+<li>Which projects should be funded?
+<ul>
+<li><strong>Mathematical Principle:</strong> In convex systems, both convexity (asymmetry of payoff) and volatility (randomness) work in your favor.</li>
+</ul></li>
+<li>Gains &gt; Harms if the payoff is asymmetric.</li>
+</ul>
+<section id="convexity-bias-jensens-inequality" class="level3">
+<h3 class="anchored" data-anchor-id="convexity-bias-jensens-inequality">Convexity Bias (Jensen’s Inequality)</h3>
+<ul>
+<li>Suppose a coin:
+<ul>
+<li>Linear: win $1, lose $1. EV = $0.</li>
+<li>Convex: win $10, lose $1. EV = +$4.5.</li>
+<li><em>The more convex the scenario, the higher the built-in advantage.</em></li>
+</ul></li>
+<li>Jensen’s inequality: Convex functions benefit from randomness.</li>
+</ul>
+<p><strong>Bottom Line:</strong><br>
+- The more convex the payoff, and the more uncertain the environment, the greater the net expected gain.</p>
+</section>
+</section>
+<section id="antifragility-benefiting-from-disorder" class="level2">
+<h2 class="anchored" data-anchor-id="antifragility-benefiting-from-disorder">Antifragility: Benefiting From Disorder</h2>
+<ul>
+<li>Fragile things dislike volatility (coffee cups).</li>
+<li>Antifragile things <em>love</em> volatility (evolution, discovery).</li>
+<li><em>Convexity bias</em> (not mere luck) can be defined, measured, and used to guide research funding.</li>
+</ul>
+<hr>
+</section>
+<section id="seven-rules-of-antifragile-convex-research" class="level1">
+<h1>Seven Rules of Antifragile (Convex) Research</h1>
+<ol type="1">
+<li><strong>Convexity &gt; Knowledge</strong>
+<ul>
+<li>Improving the payoff shape (limiting downside, stretching up side) matters more than understanding the target deeply. Lower costs per attempt to maximize upside from uncertainty.</li>
+</ul></li>
+<li><strong>1/N Strategy for Convex Bets</strong>
+<ul>
+<li>Spread the budget widely: make N as large as possible, allocating 1/N to each experiment/project.<br>
+</li>
+<li>“Fat tails” mean rare events dominate long-term results—don’t put all your eggs in one basket, and don’t try to pick the winner in advance.</li>
+</ul></li>
+<li><strong>Serial Optionality</strong>
+<ul>
+<li>Plans must allow frequent adjustments (“highways with many exits”).<br>
+</li>
+<li>Short, flexible investments vastly outperform rigid, long-term bets.</li>
+</ul></li>
+<li><strong>Nonnarrative Research</strong>
+<ul>
+<li>Favor action and opportunistic agents over story-driven plans.<br>
+</li>
+<li>Track records come from those who keep switching until something works, not from those who guess the ending in advance.</li>
+</ul></li>
+<li><strong>Practice → Theory</strong>
+<ul>
+<li>Major breakthroughs often follow from tinkering (convex practice) rather than top-down theory.</li>
+</ul></li>
+<li><strong>Premium for Simplicity</strong>
+<ul>
+<li>The simplest technologies are easily missed; avoid needless complexity.<br>
+</li>
+<li>Simple, modular setups are more robust in uncertain, opaque environments.</li>
+</ul></li>
+<li><strong>Catalog Negative Results (“Via Negativa”)</strong>
+<ul>
+<li>Knowing what <em>doesn’t</em> work is powerful. Fund, capture, and spread negative results to reduce wasted effort.</li>
+</ul></li>
+</ol>
+<hr>
+<section id="is-all-this-just-lottery-thinking" class="level2">
+<h2 class="anchored" data-anchor-id="is-all-this-just-lottery-thinking">Is All This Just Lottery Thinking?</h2>
+<p>Critics say: “This sounds like buying lottery tickets.”<br>
+But key differences make research optionality superior:</p>
+<ul>
+<li>You control your “ticket price” and can lower trial costs.</li>
+<li>Upside in research can be unlimited; lotteries have capped payoffs.</li>
+<li>You keep only winnings and cut losses via optionality.</li>
+<li>Learning and adaptation can increase your odds over time (lotteries are static).</li>
+<li>Diversification (many independent tries) raises expected value—unlike buying more lottery tickets.</li>
+<li>Research creates positive-sum value (society wins); lotteries are zero-sum with a house edge.</li>
+<li>Hits spawn new opportunities; lottery wins don’t.</li>
+</ul>
+<p><strong>Quick Math:</strong> - 100 research trials × $1 = $100 spent; if one scores $200 and rest fail, EV = +$101. - 100 lottery tickets × $1 = $100; average return $0.60 per ticket: EV = −$40.</p>
+<p><em>To avoid “lottery-like” waste:</em> - Keep trials cheap - Ensure upside is not capped - Avoid correlated bets - Learn as you go and cut losses fast</p>
+<hr>
+</section>
+<section id="appendix-visual-intuitions" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-visual-intuitions">Appendix: Visual Intuitions</h2>
+<ol type="1">
+<li><strong>Fat vs.&nbsp;thin tails:</strong> Rarer outcomes matter much more in fat-tailed systems.</li>
+<li><strong>Right tail (lognormal):</strong> Small set of rare wins dominate value.</li>
+<li><strong>Left tail (negative events):</strong> Most events harmless, but must cap rare disasters.</li>
+<li><strong>Operations:</strong> Tails, not averages, dictate most real-life quality (e.g., user pain in computing).</li>
+</ol>
+<p><strong>Rule of thumb:</strong> Cap the left tail (risks), keep the right tail (potential).</p>
+<hr>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Cites works by Jacob (1977), Bachelier (1900), Jensen (1906), Taleb &amp; Douady (2013), Mokyr (2002), Kealey (1996), and others—see original text for full list.</p>
 
 
 
+</section>
+</section>
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="dHJ1ZSUyQ21hY2hpbmUtbGVhcm5pbmctZW5naW5lZXJpbmclMkNhdXRvbWF0ZWQtbWwlMkNhZ2VudHMlMkNTV0UtYWdlbnRzJTJDS2FnZ2xl" data-listing-date-sort="1759035600000" data-listing-file-modified-sort="1759041502461" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="454">
-<div class="thumbnail"><a href="../blog/posts/MLE-STAR/index.html" class="no-external">
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/MLE-STAR/index.html" class="no-external">MLE-STAR from Google</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJ1ZQ=='); return false;">true</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bWFjaGluZS1sZWFybmluZy1lbmdpbmVlcmluZw=='); return false;">machine-learning-engineering</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YXV0b21hdGVkLW1s'); return false;">automated-ml</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YWdlbnRz'); return false;">agents</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U1dFLWFnZW50cw=='); return false;">SWE-agents</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('S2FnZ2xl'); return false;">Kaggle</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/MLE-STAR/index.html" class="no-external">
-<p>MLE-STAR achieves 64% accuracy on MLE-bench through search-driven targeted refinement</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/MLE-STAR/index.html" class="no-external">
-<div class="listing-date">
-Sep 28, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="dHJ1ZSUyQ2FudGlmcmFnaWxpdHklMkNyZXNlYXJjaC1zdHJhdGVneSUyQ2lubm92YXRpb24=" data-listing-date-sort="1759035600000" data-listing-file-modified-sort="1759041895062" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="843">
-<div class="thumbnail"><a href="../blog/posts/convexity-taleb/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/convexity-taleb/index.html" class="no-external">Understanding Is a Poor Substitute for Convexity (Antifragility)</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJ1ZQ=='); return false;">true</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YW50aWZyYWdpbGl0eQ=='); return false;">antifragility</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVzZWFyY2gtc3RyYXRlZ3k='); return false;">research-strategy</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW5ub3ZhdGlvbg=='); return false;">innovation</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/convexity-taleb/index.html" class="no-external">
-<p>A summary of research strategies that leverage convexity, optionality, and antifragility to exploit randomness for scientific and technological breakthroughs.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/convexity-taleb/index.html" class="no-external">
-<div class="listing-date">
-Sep 28, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="dHJ1ZSUyQ3JlaW5mb3JjZW1lbnQtbGVhcm5pbmclMkNncnBv" data-listing-date-sort="1756270800000" data-listing-file-modified-sort="1759029254361" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
-<div class="thumbnail"><a href="../blog/posts/grpo/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/grpo/index.html" class="no-external">GRPO - AVB</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJ1ZQ=='); return false;">true</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVpbmZvcmNlbWVudC1sZWFybmluZw=='); return false;">reinforcement-learning</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z3Jwbw=='); return false;">grpo</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/grpo/index.html" class="no-external">
-<p>Guide on generating task simulations for text-based RL and GRPO implementation</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/grpo/index.html" class="no-external">
-<div class="listing-date">
-Aug 27, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="dHJ1ZSUyQ21ldGElMkNzZXR1cA==" data-listing-date-sort="1756270800000" data-listing-file-modified-sort="1759025183114" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="30">
-<div class="thumbnail"><a href="../blog/posts/hello-world/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/hello-world/index.html" class="no-external">Hello, world</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJ1ZQ=='); return false;">true</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bWV0YQ=='); return false;">meta</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c2V0dXA='); return false;">setup</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/hello-world/index.html" class="no-external">
-<p>Kicking off my minimal site.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/hello-world/index.html" class="no-external">
-<div class="listing-date">
-Aug 27, 2025
-</div>
-</a>
-</div>
-</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->
@@ -949,7 +994,7 @@ Aug 27, 2025
     </div>   
     <div class="nav-footer-center">
 <p>© 2025 Mohammad Tanvir Hasan</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/tanvircr7.github.io/blob/main/blog/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tanvircr7.github.io/blob/main/blog/posts/convexity-taleb/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
@@ -959,5 +1004,5 @@ Aug 27, 2025
 
 
 
-<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

@@ -12,7 +12,7 @@
 <generator>quarto-1.7.33</generator>
 <lastBuildDate>Sun, 28 Sep 2025 05:00:00 GMT</lastBuildDate>
 <item>
-  <title>MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement</title>
+  <title>MLE-STAR from Google</title>
   <link>https://tanvircr7.github.io/blog/posts/MLE-STAR/</link>
   <description><![CDATA[ 
 
@@ -129,6 +129,179 @@
   <category>SWE-agents</category>
   <category>Kaggle</category>
   <guid>https://tanvircr7.github.io/blog/posts/MLE-STAR/</guid>
+  <pubDate>Sun, 28 Sep 2025 05:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Understanding Is a Poor Substitute for Convexity (Antifragility)</title>
+  <link>https://tanvircr7.github.io/blog/posts/convexity-taleb/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="introduction-missing-the-asymmetry" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-missing-the-asymmetry">Introduction: Missing the Asymmetry</h2>
+<blockquote class="blockquote">
+<p>Did you just get lucky or was it your aim?<br>
+Linear, teleological success stories fit physics.<br>
+In opaque, nonlinear fields (medicine, engineering), chance drives more breakthroughs.<br>
+Still, we build research programs around stories and direction—despite knowing better.</p>
+</blockquote>
+<p><strong>Key Point:</strong><br>
+Chance alone can’t yield steady progress—unless the payoff function is asymmetric. Nonlinear payoffs let us systematically benefit from randomness.</p>
+<ul>
+<li><em>Welcome uncertainty in the long run. It can hurt you less than it helps you.</em></li>
+</ul>
+</section>
+<section id="opaque-systems-and-optionality" class="level2">
+<h2 class="anchored" data-anchor-id="opaque-systems-and-optionality">Opaque Systems and Optionality</h2>
+<blockquote class="blockquote">
+<p>Trial and error + convexity = real progress<br>
+In experiments (cooking, science), keep what works, discard what doesn’t.<br>
+We <em>have the option</em> (not <em>the obligation</em>) to retain only favorable results.<br>
+This “optionality”—the ability to choose after the fact—lies behind convex research payoffs.</p>
+</blockquote>
+<ul>
+<li><em>Optionality liberates us from inflexible roadmaps, predictions, and stories.</em><br>
+</li>
+<li>Some research results have abnormally large long-term impact (penicillin, black swans, GPT-5 scale events).</li>
+</ul>
+<section id="analogy-research-vs.-financial-options" class="level3">
+<h3 class="anchored" data-anchor-id="analogy-research-vs.-financial-options">Analogy: Research vs.&nbsp;Financial Options</h3>
+<ul>
+<li>Research is like running many small, cheap experiments (like owning lots of “call options”).</li>
+<li>Failures cost little; one big win changes everything.</li>
+<li>In finance, option buyers pay a premium and the game is zero-sum.</li>
+<li>In research, <em>no one</em> sells you upside or limits your payoff:
+<ul>
+<li>One discovery grows the overall pie of knowledge, not just shifting value between players.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="why-uncertainty-is-valuable" class="level2">
+<h2 class="anchored" data-anchor-id="why-uncertainty-is-valuable">Why Uncertainty Is Valuable</h2>
+<ul>
+<li>Which projects should be funded?
+<ul>
+<li><strong>Mathematical Principle:</strong> In convex systems, both convexity (asymmetry of payoff) and volatility (randomness) work in your favor.</li>
+</ul></li>
+<li>Gains &gt; Harms if the payoff is asymmetric.</li>
+</ul>
+<section id="convexity-bias-jensens-inequality" class="level3">
+<h3 class="anchored" data-anchor-id="convexity-bias-jensens-inequality">Convexity Bias (Jensen’s Inequality)</h3>
+<ul>
+<li>Suppose a coin:
+<ul>
+<li>Linear: win $1, lose $1. EV = $0.</li>
+<li>Convex: win $10, lose $1. EV = +$4.5.</li>
+<li><em>The more convex the scenario, the higher the built-in advantage.</em></li>
+</ul></li>
+<li>Jensen’s inequality: Convex functions benefit from randomness.</li>
+</ul>
+<p><strong>Bottom Line:</strong><br>
+- The more convex the payoff, and the more uncertain the environment, the greater the net expected gain.</p>
+</section>
+</section>
+<section id="antifragility-benefiting-from-disorder" class="level2">
+<h2 class="anchored" data-anchor-id="antifragility-benefiting-from-disorder">Antifragility: Benefiting From Disorder</h2>
+<ul>
+<li>Fragile things dislike volatility (coffee cups).</li>
+<li>Antifragile things <em>love</em> volatility (evolution, discovery).</li>
+<li><em>Convexity bias</em> (not mere luck) can be defined, measured, and used to guide research funding.</li>
+</ul>
+<hr>
+</section>
+<section id="seven-rules-of-antifragile-convex-research" class="level1">
+<h1>Seven Rules of Antifragile (Convex) Research</h1>
+<ol type="1">
+<li><strong>Convexity &gt; Knowledge</strong>
+<ul>
+<li>Improving the payoff shape (limiting downside, stretching up side) matters more than understanding the target deeply. Lower costs per attempt to maximize upside from uncertainty.</li>
+</ul></li>
+<li><strong>1/N Strategy for Convex Bets</strong>
+<ul>
+<li>Spread the budget widely: make N as large as possible, allocating 1/N to each experiment/project.<br>
+</li>
+<li>“Fat tails” mean rare events dominate long-term results—don’t put all your eggs in one basket, and don’t try to pick the winner in advance.</li>
+</ul></li>
+<li><strong>Serial Optionality</strong>
+<ul>
+<li>Plans must allow frequent adjustments (“highways with many exits”).<br>
+</li>
+<li>Short, flexible investments vastly outperform rigid, long-term bets.</li>
+</ul></li>
+<li><strong>Nonnarrative Research</strong>
+<ul>
+<li>Favor action and opportunistic agents over story-driven plans.<br>
+</li>
+<li>Track records come from those who keep switching until something works, not from those who guess the ending in advance.</li>
+</ul></li>
+<li><strong>Practice → Theory</strong>
+<ul>
+<li>Major breakthroughs often follow from tinkering (convex practice) rather than top-down theory.</li>
+</ul></li>
+<li><strong>Premium for Simplicity</strong>
+<ul>
+<li>The simplest technologies are easily missed; avoid needless complexity.<br>
+</li>
+<li>Simple, modular setups are more robust in uncertain, opaque environments.</li>
+</ul></li>
+<li><strong>Catalog Negative Results (“Via Negativa”)</strong>
+<ul>
+<li>Knowing what <em>doesn’t</em> work is powerful. Fund, capture, and spread negative results to reduce wasted effort.</li>
+</ul></li>
+</ol>
+<hr>
+<section id="is-all-this-just-lottery-thinking" class="level2">
+<h2 class="anchored" data-anchor-id="is-all-this-just-lottery-thinking">Is All This Just Lottery Thinking?</h2>
+<p>Critics say: “This sounds like buying lottery tickets.”<br>
+But key differences make research optionality superior:</p>
+<ul>
+<li>You control your “ticket price” and can lower trial costs.</li>
+<li>Upside in research can be unlimited; lotteries have capped payoffs.</li>
+<li>You keep only winnings and cut losses via optionality.</li>
+<li>Learning and adaptation can increase your odds over time (lotteries are static).</li>
+<li>Diversification (many independent tries) raises expected value—unlike buying more lottery tickets.</li>
+<li>Research creates positive-sum value (society wins); lotteries are zero-sum with a house edge.</li>
+<li>Hits spawn new opportunities; lottery wins don’t.</li>
+</ul>
+<p><strong>Quick Math:</strong> - 100 research trials × $1 = $100 spent; if one scores $200 and rest fail, EV = +$101. - 100 lottery tickets × $1 = $100; average return $0.60 per ticket: EV = −$40.</p>
+<p><em>To avoid “lottery-like” waste:</em> - Keep trials cheap - Ensure upside is not capped - Avoid correlated bets - Learn as you go and cut losses fast</p>
+<hr>
+</section>
+<section id="appendix-visual-intuitions" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-visual-intuitions">Appendix: Visual Intuitions</h2>
+<ol type="1">
+<li><strong>Fat vs.&nbsp;thin tails:</strong> Rarer outcomes matter much more in fat-tailed systems.</li>
+<li><strong>Right tail (lognormal):</strong> Small set of rare wins dominate value.</li>
+<li><strong>Left tail (negative events):</strong> Most events harmless, but must cap rare disasters.</li>
+<li><strong>Operations:</strong> Tails, not averages, dictate most real-life quality (e.g., user pain in computing).</li>
+</ol>
+<p><strong>Rule of thumb:</strong> Cap the left tail (risks), keep the right tail (potential).</p>
+<hr>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Cites works by Jacob (1977), Bachelier (1900), Jensen (1906), Taleb &amp; Douady (2013), Mokyr (2002), Kealey (1996), and others—see original text for full list.</p>
+
+
+
+</section>
+</section>
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div> ]]></description>
+  <category>true</category>
+  <category>antifragility</category>
+  <category>research-strategy</category>
+  <category>innovation</category>
+  <guid>https://tanvircr7.github.io/blog/posts/convexity-taleb/</guid>
   <pubDate>Sun, 28 Sep 2025 05:00:00 GMT</pubDate>
 </item>
 <item>
