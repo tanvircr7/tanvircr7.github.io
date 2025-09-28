@@ -16,6 +16,17 @@
     "items": []
   },
   {
+    "listing": "/index.html",
+    "items": [
+      "/blog/posts/GEPA/index.html",
+      "/blog/posts/MLE-STAR/index.html",
+      "/blog/posts/convexity-taleb/index.html",
+      "/blog/posts/reflexion-verbalRL/index.html",
+      "/blog/posts/grpo/index.html",
+      "/blog/posts/hello-world/index.html"
+    ]
+  },
+  {
     "listing": "/blog/index.html",
     "items": [
       "/blog/posts/GEPA/index.html",
