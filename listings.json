@@ -12,8 +12,13 @@
     "items": []
   },
   {
+    "listing": "/blog/posts/GEPA/index.html",
+    "items": []
+  },
+  {
     "listing": "/blog/index.html",
     "items": [
+      "/blog/posts/GEPA/index.html",
       "/blog/posts/MLE-STAR/index.html",
       "/blog/posts/convexity-taleb/index.html",
       "/blog/posts/reflexion-verbalRL/index.html",

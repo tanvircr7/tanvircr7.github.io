@@ -70,18 +70,74 @@
     "text": "References\nCites works by Jacob (1977), Bachelier (1900), Jensen (1906), Taleb & Douady (2013), Mokyr (2002), Kealey (1996), and others—see original text for full list."
   },
   {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
+    "objectID": "blog/posts/GEPA/index.html",
+    "href": "blog/posts/GEPA/index.html",
+    "title": "GEPA: Reflective Prompt Optimization for Compound AI",
     "section": "",
-    "text": "Browse my posts below.\nUse categories/tags to filter topics.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nMLE-STAR from Google\n\n\n\ntrue\n\nmachine-learning-engineering\n\nautomated-ml\n\nagents\n\nSWE-agents\n\nKaggle\n\n\n\nMLE-STAR achieves 64% accuracy on MLE-bench through search-driven targeted refinement\n\n\n\n\n\nSep 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding Is a Poor Substitute for Convexity (Antifragility)\n\n\n\ntrue\n\nantifragility\n\nresearch-strategy\n\ninnovation\n\n\n\nA summary of research strategies that leverage convexity, optionality, and antifragility to exploit randomness for scientific and technological breakthroughs.\n\n\n\n\n\nSep 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nReflexion: Language Agents with Verbal Reinforcement Learning\n\n\n\ntrue\n\nlanguage-agents\n\nreinforcement-learning\n\nnatural-language\n\nfeedback\n\n\n\nOutline of Reflexion: RL language agents with episodic memory through reflection—summary of findings, results, and methodology.\n\n\n\n\n\nSep 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nGRPO - AVB\n\n\n\ntrue\n\nreinforcement-learning\n\ngrpo\n\n\n\nGuide on generating task simulations for text-based RL and GRPO implementation\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nHello, world\n\n\n\ntrue\n\nmeta\n\nsetup\n\n\n\nKicking off my minimal site.\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\nNo matching items"
+    "text": "LLMs adapt to downstream tasks via RL (GRPO)\nBUT language is a richer feedback (interpretable, flexible)\nEnter GEPA: a prompt optimizer using NL rules—learned high-level rules by trial & error\n\nGiven:\n- An AI system with ≥1 prompts\n- Samples system-level trajectories (reasoning, tool calls, outputs)\n- Reflects on them\n- Diagnoses problems, proposes & tests prompt updates\n- Combines complementary lessons from Pareto Frontier of its own runs\nFindings:\n- Few rollouts yield big gains\n- Beats GRPO (+10% avg), MIPROv2 (+10%)\n- Effective inference-time strategy for code/prompt optimization"
+  },
+  {
+    "objectID": "blog/posts/GEPA/index.html#abstract",
+    "href": "blog/posts/GEPA/index.html#abstract",
+    "title": "GEPA: Reflective Prompt Optimization for Compound AI",
+    "section": "",
+    "text": "LLMs adapt to downstream tasks via RL (GRPO)\nBUT language is a richer feedback (interpretable, flexible)\nEnter GEPA: a prompt optimizer using NL rules—learned high-level rules by trial & error\n\nGiven:\n- An AI system with ≥1 prompts\n- Samples system-level trajectories (reasoning, tool calls, outputs)\n- Reflects on them\n- Diagnoses problems, proposes & tests prompt updates\n- Combines complementary lessons from Pareto Frontier of its own runs\nFindings:\n- Few rollouts yield big gains\n- Beats GRPO (+10% avg), MIPROv2 (+10%)\n- Effective inference-time strategy for code/prompt optimization"
+  },
+  {
+    "objectID": "blog/posts/GEPA/index.html#introduction",
+    "href": "blog/posts/GEPA/index.html#introduction",
+    "title": "GEPA: Reflective Prompt Optimization for Compound AI",
+    "section": "Introduction",
+    "text": "Introduction\n\nLLMs → multi-step agents + tool users\nFuzzy natural language + tool use (retrieval, code exec)\nGoal: Optimize for downstream performance\n\nPrevious:\n- RLVR/GRPO: Group Relative Policy Optimization\n- Scalar reward per rollout, used for gradients\n- Needs tens of thousands of rollouts\n- Expensive (tool calls), budget-constrained\n\nKey insight:\nRollouts = serialized language traces (instructions, reasoning, tool calls, errors).\nModern LLMs can understand these traces—so why use only scalar rewards?\n\n\nHypothesis: Algorithms that reflect & reason over these traces (in language) exploit language model priors more efficiently than classic RL."
+  },
+  {
+    "objectID": "blog/posts/GEPA/index.html#gepa-genetic-pareto-reflective-optimization",
+    "href": "blog/posts/GEPA/index.html#gepa-genetic-pareto-reflective-optimization",
+    "title": "GEPA: Reflective Prompt Optimization for Compound AI",
+    "section": "GEPA: Genetic-Pareto Reflective Optimization",
+    "text": "GEPA: Genetic-Pareto Reflective Optimization\n\nReflective prompt optimizer for compound AI systems\nNL feedback + evolutionary multi-objective search\n\nMethod:\n1. Mutate every prompt using NL feedback\n2. Accumulate high-level lessons from batch observations\n3. Maintain Pareto front of candidates (avoids local optima)\n4. Explore top-performing prompts per task instance\nBenefits:\n- Diversifies strategies → robust generalization\n- Efficient: achieves gains with far fewer rollouts"
+  },
+  {
+    "objectID": "blog/posts/GEPA/index.html#evaluation",
+    "href": "blog/posts/GEPA/index.html#evaluation",
+    "title": "GEPA: Reflective Prompt Optimization for Compound AI",
+    "section": "Evaluation",
+    "text": "Evaluation\nBenchmarks:\n- HotpotQA, IFBench, PUPA, HoVer\n- Models: Open (Qwen3 8B), Proprietary (GPT-4.1 mini)\nResults:\n- GEPA &gt; GRPO by up to 19%\n- 35× fewer rollouts needed\n- +10% avg improvement vs GRPO\n- Beats MIPROv2 on every benchmark\n- +14% aggregate gains (MIPROv2: +7%)\nPractical:\n- Single reflective update → large improvements\n- Prompts not only numerically better—actually more interpretable/usable\n- Works in budget-constrained/inference-time environments"
+  },
+  {
+    "objectID": "blog/posts/GEPA/index.html#addressing-concern",
+    "href": "blog/posts/GEPA/index.html#addressing-concern",
+    "title": "GEPA: Reflective Prompt Optimization for Compound AI",
+    "section": "Addressing Concern",
+    "text": "Addressing Concern\n\n“Isn’t GEPA just gaming metrics with weird prompts?”\n\nQualitative check: Prompts actually look and work better, not just metric-optimized\n\nSample-efficient, robust, generalizes well"
+  },
+  {
+    "objectID": "blog/posts/GEPA/index.html#method-key-steps",
+    "href": "blog/posts/GEPA/index.html#method-key-steps",
+    "title": "GEPA: Reflective Prompt Optimization for Compound AI",
+    "section": "Method: Key Steps",
+    "text": "Method: Key Steps\n\nProblem Statement\nGEPA Algorithm\n\n3.1 Genetic Optimization Loop\n3.2 Reflective Prompt Mutation\n3.3 Pareto-Based Candidate Selection\n\nEvaluation Setup (see paper for task/config details)"
+  },
+  {
+    "objectID": "blog/posts/GEPA/index.html#summary",
+    "href": "blog/posts/GEPA/index.html#summary",
+    "title": "GEPA: Reflective Prompt Optimization for Compound AI",
+    "section": "Summary",
+    "text": "Summary\n\nLeverages natural language for richer, more efficient optimization\n\nMaintains diversity/Robustness: Pareto front avoids local minima\n\nBeats strong RL baselines with fewer samples\n\nPractical for real-world, resource-limited systems"
+  },
+  {
+    "objectID": "notes/index.html",
+    "href": "notes/index.html",
+    "title": "Notes",
+    "section": "",
+    "text": "Quick notes and scratchpads:\n\nKeep short, linkable snippets here.\nUse folders in notes/ if you want multiple pages."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Tanvir Hasan",
     "section": "",
-    "text": "Hi, I’m Mohammad Tanvir Hasan\nResearching multi-agent systems, steganography, and research automation (RAG/agentic workflows).\nGitHub · LinkedIn · mthasan@ualr.edu"
+    "text": "Hi, I’m Tanvir Hasan\nResearching Multi-Agent Systems, Reinforcement Learning, and Agentic workflows.\nGitHub · LinkedIn · mthasan@ualr.edu"
   },
   {
     "objectID": "index.html#research-focus",
@@ -119,11 +175,11 @@
     "text": "Latest posts\nA few recent notes and writing.\n\n\nlisting: contents: blog/posts sort: “date desc” max-items: 3 type: default\n\n\nBuilt with Quarto and deployed on GitHub Pages."
   },
   {
-    "objectID": "notes/index.html",
-    "href": "notes/index.html",
-    "title": "Notes",
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
     "section": "",
-    "text": "Quick notes and scratchpads:\n\nKeep short, linkable snippets here.\nUse folders in notes/ if you want multiple pages."
+    "text": "Browse my posts below.\nUse categories/tags to filter topics.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nGEPA: Reflective Prompt Optimization for Compound AI\n\n\n\ntrue\n\nprompt-optimization\n\ncompound-ai\n\nreflection\n\nevolutionary-search\n\n\n\nGEPA leverages language-based reflection and Pareto evolutionary search for prompt optimization—offering vast sample efficiency and robust, generalizable gains on diverse agent benchmarks.\n\n\n\n\n\nSep 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMLE-STAR from Google\n\n\n\ntrue\n\nmachine-learning-engineering\n\nautomated-ml\n\nagents\n\nSWE-agents\n\nKaggle\n\n\n\nMLE-STAR achieves 64% accuracy on MLE-bench through search-driven targeted refinement\n\n\n\n\n\nSep 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding Is a Poor Substitute for Convexity (Antifragility)\n\n\n\ntrue\n\nantifragility\n\nresearch-strategy\n\ninnovation\n\n\n\nA summary of research strategies that leverage convexity, optionality, and antifragility to exploit randomness for scientific and technological breakthroughs.\n\n\n\n\n\nSep 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nReflexion: Language Agents with Verbal Reinforcement Learning\n\n\n\ntrue\n\nlanguage-agents\n\nreinforcement-learning\n\nnatural-language\n\nfeedback\n\n\n\nOutline of Reflexion: RL language agents with episodic memory through reflection—summary of findings, results, and methodology.\n\n\n\n\n\nSep 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nGRPO - AVB\n\n\n\ntrue\n\nreinforcement-learning\n\ngrpo\n\n\n\nGuide on generating task simulations for text-based RL and GRPO implementation\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nHello, world\n\n\n\ntrue\n\nmeta\n\nsetup\n\n\n\nKicking off my minimal site.\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/posts/MLE-STAR/index.html",

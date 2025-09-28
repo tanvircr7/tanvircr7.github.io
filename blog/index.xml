@@ -12,6 +12,146 @@
 <generator>quarto-1.7.33</generator>
 <lastBuildDate>Sun, 28 Sep 2025 05:00:00 GMT</lastBuildDate>
 <item>
+  <title>GEPA: Reflective Prompt Optimization for Compound AI</title>
+  <link>https://tanvircr7.github.io/blog/posts/GEPA/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<blockquote class="blockquote">
+<p>LLMs adapt to downstream tasks via RL (GRPO)<br>
+BUT language is a richer feedback (interpretable, flexible)<br>
+Enter <strong>GEPA</strong>: a prompt optimizer using NL rules—learned high-level rules by trial &amp; error</p>
+</blockquote>
+<p><strong>Given:</strong><br>
+- An AI system with ≥1 prompts<br>
+- Samples system-level trajectories (reasoning, tool calls, outputs)<br>
+- Reflects on them<br>
+- Diagnoses problems, proposes &amp; tests prompt updates<br>
+- Combines complementary lessons from Pareto Frontier of its own runs</p>
+<p><strong>Findings:</strong><br>
+- Few rollouts yield big gains<br>
+- Beats GRPO (+10% avg), MIPROv2 (+10%)<br>
+- Effective <em>inference-time</em> strategy for code/prompt optimization</p>
+<hr>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<blockquote class="blockquote">
+<p>LLMs → multi-step agents + tool users<br>
+Fuzzy natural language + tool use (retrieval, code exec)<br>
+<strong>Goal:</strong> Optimize for downstream performance</p>
+</blockquote>
+<p><strong>Previous:</strong><br>
+- RLVR/GRPO: Group Relative Policy Optimization<br>
+- Scalar reward per rollout, used for gradients<br>
+- Needs tens of thousands of rollouts<br>
+- Expensive (tool calls), budget-constrained</p>
+<blockquote class="blockquote">
+<p><strong>Key insight:</strong><br>
+Rollouts = serialized language traces (instructions, reasoning, tool calls, errors).<br>
+Modern LLMs can <em>understand</em> these traces—so why use only scalar rewards?</p>
+</blockquote>
+<ul>
+<li><strong>Hypothesis:</strong> Algorithms that reflect &amp; reason over these traces (in language) exploit language model priors more efficiently than classic RL.</li>
+</ul>
+<hr>
+</section>
+<section id="gepa-genetic-pareto-reflective-optimization" class="level2">
+<h2 class="anchored" data-anchor-id="gepa-genetic-pareto-reflective-optimization">GEPA: Genetic-Pareto Reflective Optimization</h2>
+<ul>
+<li>Reflective prompt optimizer for compound AI systems</li>
+<li>NL feedback + evolutionary multi-objective search</li>
+</ul>
+<p><strong>Method:</strong><br>
+1. Mutate every prompt using NL feedback<br>
+2. Accumulate high-level lessons from batch observations<br>
+3. Maintain Pareto front of candidates (avoids local optima)<br>
+4. Explore top-performing prompts per task instance</p>
+<p><strong>Benefits:</strong><br>
+- Diversifies strategies → robust generalization<br>
+- Efficient: achieves gains with far fewer rollouts</p>
+<hr>
+</section>
+<section id="evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation">Evaluation</h2>
+<p><strong>Benchmarks:</strong><br>
+- HotpotQA, IFBench, PUPA, HoVer<br>
+- Models: Open (Qwen3 8B), Proprietary (GPT-4.1 mini)</p>
+<p><strong>Results:</strong><br>
+- GEPA &gt; GRPO by up to 19%<br>
+- 35× fewer rollouts needed<br>
+- +10% avg improvement vs GRPO<br>
+- Beats MIPROv2 on every benchmark<br>
+- +14% aggregate gains (MIPROv2: +7%)</p>
+<p><strong>Practical:</strong><br>
+- Single reflective update → large improvements<br>
+- Prompts not only numerically better—actually more interpretable/usable<br>
+- Works in budget-constrained/inference-time environments</p>
+<hr>
+</section>
+<section id="addressing-concern" class="level2">
+<h2 class="anchored" data-anchor-id="addressing-concern">Addressing Concern</h2>
+<ul>
+<li>“Isn’t GEPA just gaming metrics with weird prompts?”
+<ul>
+<li><em>Qualitative check</em>: Prompts actually look and work better, not just metric-optimized<br>
+</li>
+<li>Sample-efficient, robust, generalizes well</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="method-key-steps" class="level2">
+<h2 class="anchored" data-anchor-id="method-key-steps">Method: Key Steps</h2>
+<ol type="1">
+<li><strong>Problem Statement</strong></li>
+<li><strong>GEPA Algorithm</strong>
+<ul>
+<li>3.1 Genetic Optimization Loop</li>
+<li>3.2 Reflective Prompt Mutation</li>
+<li>3.3 Pareto-Based Candidate Selection</li>
+</ul></li>
+<li><strong>Evaluation Setup</strong> (see paper for task/config details)</li>
+</ol>
+<hr>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<ul>
+<li>Leverages natural language for richer, more efficient optimization<br>
+</li>
+<li>Maintains diversity/Robustness: Pareto front avoids local minima<br>
+</li>
+<li>Beats strong RL baselines with fewer samples<br>
+</li>
+<li>Practical for real-world, resource-limited systems</li>
+</ul>
+<hr>
+
+
+
+</section>
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div> ]]></description>
+  <category>true</category>
+  <category>prompt-optimization</category>
+  <category>compound-ai</category>
+  <category>reflection</category>
+  <category>evolutionary-search</category>
+  <guid>https://tanvircr7.github.io/blog/posts/GEPA/</guid>
+  <pubDate>Sun, 28 Sep 2025 05:00:00 GMT</pubDate>
+</item>
+<item>
   <title>MLE-STAR from Google</title>
   <link>https://tanvircr7.github.io/blog/posts/MLE-STAR/</link>
   <description><![CDATA[ 
