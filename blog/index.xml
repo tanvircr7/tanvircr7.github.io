@@ -144,7 +144,7 @@ Modern LLMs can <em>understand</em> these traces—so why use only scalar reward
   <category>evolutionary-search</category>
   <guid>https://tanvircr7.github.io/blog/posts/GEPA/</guid>
   <pubDate>Sun, 28 Sep 2025 05:00:00 GMT</pubDate>
-  <media:content url="https://tanvircr7.github.io/blog/images/gepa-thumb.png" medium="image" type="image/png"/>
+  <media:content url="https://tanvircr7.github.io/images/gepa-thumb.png" medium="image" type="image/png" height="72" width="144"/>
 </item>
 <item>
   <title>MLE-STAR from Google</title>
@@ -426,7 +426,7 @@ But key differences make research optionality superior:</p>
   <category>innovation</category>
   <guid>https://tanvircr7.github.io/blog/posts/convexity-taleb/</guid>
   <pubDate>Sun, 28 Sep 2025 05:00:00 GMT</pubDate>
-  <media:content url="https://tanvircr7.github.io/blog/images/convex.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://tanvircr7.github.io/images/convex.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Reflexion: Language Agents with Verbal Reinforcement Learning</title>
