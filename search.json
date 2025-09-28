@@ -16,44 +16,44 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Hi, I’m Mohammad Tanvir Hasan",
+    "title": "Tanvir Hasan",
     "section": "",
-    "text": "Welcome — this is my minimal site. I build AI systems and tooling for research automation, RAG, and agentic workflows."
+    "text": "&lt;div class=\"role-title\"&gt;Hi, I’m Mohammad Tanvir Hasan&lt;/div&gt;\n&lt;div&gt;Researching multi-agent systems, steganography, and research automation (RAG/agentic workflows).&lt;/div&gt;\n&lt;div&gt;\n  &lt;a href=\"https://github.com/tanvircr7\"&gt;GitHub&lt;/a&gt; ·\n  &lt;a href=\"https://www.linkedin.com/in/mdthasan\"&gt;LinkedIn&lt;/a&gt; ·\n  &lt;a href=\"mailto:mthasan@ualr.edu\"&gt;mthasan@ualr.edu&lt;/a&gt;\n&lt;/div&gt;"
   },
   {
-    "objectID": "index.html#what-im-focused-on",
-    "href": "index.html#what-im-focused-on",
-    "title": "Hi, I’m Mohammad Tanvir Hasan",
-    "section": "What I’m focused on",
-    "text": "What I’m focused on\n\nMulti-agent systems\nSteganography\nAI for Science\nSecurity"
+    "objectID": "index.html#research-focus",
+    "href": "index.html#research-focus",
+    "title": "Tanvir Hasan",
+    "section": "Research focus",
+    "text": "Research focus\n\nMulti-agent systems · coordination & evaluation\nSteganography · robust/secure text & image channels\nAI for Science · reproducible workflows & agents\nSecurity · model + data pipeline hardening"
   },
   {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "Hi, I’m Mohammad Tanvir Hasan",
-    "section": "Experience",
-    "text": "Experience\n\nResearch Intern, Madabushi Lab, Georgia Tech & Emory (Aug 2025–Present)\nGraduate Assistant, University of Arkansas at Little Rock (Oct 2024–Present)\nSoftware Engineer, Tecpen (May 2023–Jul 2024)"
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Hi, I’m Mohammad Tanvir Hasan",
-    "section": "Education",
-    "text": "Education\n\nM.Sc., Computer Science, University of Arkansas at Little Rock (Aug 2024– )\nB.Sc., CSE, Khulna University of Engineering & Technology (Grad. 2023)"
+    "objectID": "index.html#positions",
+    "href": "index.html#positions",
+    "title": "Tanvir Hasan",
+    "section": "Positions",
+    "text": "Positions\n\n\n\n&lt;div class=\"role-title\"&gt;Research Intern&lt;/div&gt;\n&lt;div class=\"role-inst\"&gt;Madabushi Lab, Georgia Tech &amp; Emory&lt;/div&gt;\n&lt;div&gt;Working on multi-agent evaluation and secure communication in agent systems.&lt;/div&gt;\n\n\n\n\n\n&lt;div class=\"role-title\"&gt;Graduate Assistant&lt;/div&gt;\n&lt;div class=\"role-inst\"&gt;University of Arkansas at Little Rock&lt;/div&gt;\n&lt;div&gt;Research automation tooling and RAG infrastructure for academic workflows.&lt;/div&gt;"
   },
   {
     "objectID": "index.html#selected-projects",
     "href": "index.html#selected-projects",
-    "title": "Hi, I’m Mohammad Tanvir Hasan",
+    "title": "Tanvir Hasan",
     "section": "Selected projects",
-    "text": "Selected projects\n\nUALR Chatbot — RAG assistant for Admissions (LangGraph, Firebase, React, Docker).\n\nCorrective RAG — LangGraph + ChromaDB + Streamlit; web search backfill; live demo.\n\nMulti-Agent Recommendation System — AWS Bedrock supervisor w/ Lambda + S3.\n\nViT vs. CNN Image Classification — custom ViT vs EfficientNetB2; HuggingFace demo.\n\nUpliftt / Upliftt AI — Flutter app; AI integrations, guardrails."
+    "text": "Selected projects\n\nUALR Chatbot — RAG assistant for Admissions (LangGraph, Firebase, React, Docker).\nCorrective RAG — LangGraph + ChromaDB + Streamlit; web search backfill; live demo.\nMulti-Agent Recommendation System — AWS Bedrock supervisor w/ Lambda + S3.\nViT vs. CNN Image Classification — custom ViT vs EfficientNetB2; HuggingFace demo.\nUpliftt / Upliftt AI — Flutter app; AI integrations & guardrails."
   },
   {
-    "objectID": "index.html#publications",
-    "href": "index.html#publications",
-    "title": "Hi, I’m Mohammad Tanvir Hasan",
-    "section": "Publications",
-    "text": "Publications\n\nData Trading System Using Blockchain with Oracle Network. EICT 2023.\n\nEnhancing E-Voting Security with Blockchain-Backed Decentralized Authorization. EICT 2023.\n\n\nThis site is built with Quarto and deployed via GitHub Pages."
+    "objectID": "index.html#publications-selected",
+    "href": "index.html#publications-selected",
+    "title": "Tanvir Hasan",
+    "section": "Publications (selected)",
+    "text": "Publications (selected)\n\nData Trading System Using Blockchain with Oracle Network. EICT 2023.\n\nEnhancing E-Voting Security with Blockchain-Backed Decentralized Authorization. EICT 2023."
+  },
+  {
+    "objectID": "index.html#latest-posts",
+    "href": "index.html#latest-posts",
+    "title": "Tanvir Hasan",
+    "section": "Latest posts",
+    "text": "Latest posts\n\n\nA few recent notes and writing.\n\nAll posts →\n\n\n\n{{&lt; listing     path=\"blog/posts\"     sort=\"date desc\"     max-items=3     type=\"default\" &gt;}}"
   },
   {
     "objectID": "notes/index.html",

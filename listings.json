@@ -10,12 +10,6 @@
     ]
   },
   {
-    "listing": "/index.html",
-    "items": [
-      "/blog/posts/hello-world/index.html"
-    ]
-  },
-  {
     "listing": "/blog/posts/hello-world/index.html",
     "items": []
   }
