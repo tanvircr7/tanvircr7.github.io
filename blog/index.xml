@@ -12,6 +12,170 @@
 <generator>quarto-1.7.33</generator>
 <lastBuildDate>Wed, 27 Aug 2025 05:00:00 GMT</lastBuildDate>
 <item>
+  <title>GRPO - AVB</title>
+  <link>https://tanvircr7.github.io/blog/posts/GRPO/GRPO-Huggingface.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="outline" class="level2">
+<h2 class="anchored" data-anchor-id="outline">Outline</h2>
+<p>How to generate task simulations for text based RL</p>
+<p>How GRPO works + Equations</p>
+<p>Code - implementing GRPO from scratch</p>
+<p>Supervised finetuning</p>
+<p>10 key points exclusive</p>
+<p><strong>Caveat:</strong></p>
+<p>5 is for people who want the TLDR on picking config for TRL verifiers and Unsloth (not interested on coding things from scratch)</p>
+</section>
+<section id="simulating-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="simulating-tasks">1. Simulating Tasks</h2>
+<blockquote class="blockquote">
+<p>to do RL we need tasks</p>
+</blockquote>
+<section id="syllogism" class="level3">
+<h3 class="anchored" data-anchor-id="syllogism">Syllogism</h3>
+<p>Premise 1</p>
+<p>Premise 2</p>
+<p>Conclusion</p>
+</section>
+<section id="propositional-logic-task" class="level3">
+<h3 class="anchored" data-anchor-id="propositional-logic-task">Propositional Logic Task</h3>
+<p>Harder</p>
+<blockquote class="blockquote">
+<p>Reasoning Gym</p>
+</blockquote>
+</section>
+</section>
+<section id="reasoning-gym-library---rewards-telegraphic-summary" class="level2">
+<h2 class="anchored" data-anchor-id="reasoning-gym-library---rewards-telegraphic-summary">Reasoning Gym Library - Rewards (Telegraphic Summary)</h2>
+<p><strong>Core Function:</strong></p>
+<p>reasoning_gym.create_dataset() → generates propositional logic examples</p>
+<p>Makes prompt creation/validation easy</p>
+<p><strong>System Architecture:</strong></p>
+<p>LLM generates: <code>&lt;think&gt;reasoning&lt;/think&gt; &lt;answer&gt;result&lt;/answer&gt;</code></p>
+<p>Extract function: regex pulls answers from XML tags</p>
+<p>Score function: +1 reward for correct, 0 for incorrect</p>
+<p><strong>Testing Flow:</strong></p>
+<p>Loop through dataset questions</p>
+<p>Generate LLM response</p>
+<p>Extract answer via regex</p>
+<p>Score correctness</p>
+<p><strong>Results by Model:</strong></p>
+<p><strong>Manual Input:</strong> ✅ Works correctly</p>
+<p><strong>GPT-4.1 Mini:</strong> ✅</p>
+<ul>
+<li>Solid responses</li>
+<li>Follows XML format</li>
+<li>No additional training needed</li>
+</ul>
+<p><strong>SmallLM135M (135M params):</strong> ❌</p>
+<ul>
+<li>Flawed reasoning</li>
+<li>Ignores XML instruction format</li>
+<li>Can’t extract answers → can’t score</li>
+</ul>
+<p><strong>Next:</strong> Reinforcement learning to improve small model performance</p>
+</section>
+<section id="grpo-visually-explained" class="level2">
+<h2 class="anchored" data-anchor-id="grpo-visually-explained">GRPO visually explained</h2>
+<blockquote class="blockquote">
+<p>Two Major Phases:</p>
+</blockquote>
+<p><strong>Experience Collection</strong> → LLM interacts, fills buffer</p>
+<p><strong>Training</strong> → Update model weights for better rewards</p>
+<blockquote class="blockquote">
+<p>Experience Collection Phase</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Step-by-Step:</p>
+</blockquote>
+<p><strong>Sample batch</strong> → e.g., 2 questions from environment</p>
+<p><strong>Tokenize + Generate</strong> → Multiple responses via high temperature sampling</p>
+<p><strong>Detokenize</strong> → Convert back to string responses</p>
+<p><strong>Score</strong> → Environment generates reward for each response</p>
+<p>✅ Correct + proper format = high rewards</p>
+<p>❌ Incorrect/wrong format = low rewards</p>
+<blockquote class="blockquote">
+<p>Advantage Calculation:</p>
+</blockquote>
+<p><strong>Standardize rewards</strong> → zero mean, std dev = 1</p>
+<p><strong>Group Relative</strong> = relative advantage vs other responses to same question</p>
+<p>Why called “Group Relative Policy Optimization”</p>
+<blockquote class="blockquote">
+<p>Buffer Storage (4 components per experience):</p>
+</blockquote>
+<p><strong>Full sequence</strong> → system prompt + question + LLM answer</p>
+<p><strong>Response mask</strong> → binary indicator of LLM-generated tokens</p>
+<p><strong>Group relative advantage</strong> → standardized reward score</p>
+<p><strong>Log probabilities</strong> → of generated tokens (used in training phase)</p>
+<blockquote class="blockquote">
+<p>Next: Training phase uses these stored experiences to update model weights</p>
+</blockquote>
+</section>
+<section id="policy-optimization-ppo-loss-telegraphic" class="level2">
+<h2 class="anchored" data-anchor-id="policy-optimization-ppo-loss-telegraphic">Policy Optimization &amp; PPO Loss (Telegraphic)</h2>
+<p><strong>Core Objective:</strong> Maximize Policy Gradient</p>
+<p><strong>Equation Breakdown:</strong></p>
+<p>First Σ → loops over G responses per question</p>
+<p>Second Σ → loops over tokens (t=1 to length) in each response</p>
+<p><strong>Result:</strong> Nested loop through every token in batch</p>
+<section id="key-components" class="level3">
+<h3 class="anchored" data-anchor-id="key-components">Key Components</h3>
+<p><strong>π(θ) × A_it:</strong></p>
+<p>A_it = advantage of each token</p>
+<p>The easiest way to assign advantage to each token is..</p>
+<p><strong>Simple version:</strong> Copy response advantage to all tokens</p>
+<p><strong>Logic:</strong> Every token equally responsible for correct answer</p>
+<p><strong>Example:</strong> +1 response advantage → +1 for each token</p>
+<p><strong>π term (Probability):</strong></p>
+<p>Probability of token t in response i</p>
+<p>Given: question Q + previous tokens (autoregressive)</p>
+</section>
+<section id="training-logic" class="level3">
+<h3 class="anchored" data-anchor-id="training-logic">Training Logic</h3>
+<p><strong>Fixed:</strong> Advantages (from environment rewards) <strong>Variable:</strong> Token probabilities (from LLM)</p>
+<p>To maximize objective:</p>
+<p>↑ Probability of tokens with positive advantage</p>
+<p>↓ Probability of tokens with negative advantage</p>
+</section>
+<section id="advanced-components" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-components">Advanced Components</h3>
+<p><strong>Importance Sampling (π/π_old):</strong></p>
+<p>π_old = policy during experience collection</p>
+<p>π = current training policy</p>
+<p>Reweights advantages between old/new networks</p>
+<p><strong>Clipping Term:</strong></p>
+<p><strong>Purpose:</strong> Regularization - prevents extreme weight updates</p>
+<p><strong>Constraint:</strong> Ratio clamped between (1-ε, 1+ε)</p>
+<p><strong>Effect:</strong> “Don’t change weights too quickly”</p>
+<p><strong>Result:</strong> Model learns to generate tokens → higher advantages → correct answers</p>
+<p><strong>Next:</strong> Code implementation</p>
+</section>
+</section>
+<section id="grpo-from-scratch" class="level2">
+<h2 class="anchored" data-anchor-id="grpo-from-scratch">GRPO from Scratch</h2>
+<p>GRPO from Scratch</p>
+
+
+
+</section>
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div> ]]></description>
+  <category>true</category>
+  <category>reinforcement-learning</category>
+  <category>grpo</category>
+  <guid>https://tanvircr7.github.io/blog/posts/GRPO/GRPO-Huggingface.html</guid>
+  <pubDate>Wed, 27 Aug 2025 05:00:00 GMT</pubDate>
+</item>
+<item>
   <title>Hello, world</title>
   <link>https://tanvircr7.github.io/blog/posts/hello-world/</link>
   <description><![CDATA[ 

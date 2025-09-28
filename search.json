@@ -7,11 +7,60 @@
     "text": "Browse by topic. Click a category to filter posts.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
+    "objectID": "blog/posts/GRPO/GRPO-Huggingface.html",
+    "href": "blog/posts/GRPO/GRPO-Huggingface.html",
+    "title": "GRPO - AVB",
     "section": "",
-    "text": "Browse my posts below.\nUse categories/tags to filter topics.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nHello, world\n\n\n\ntrue\n\nmeta\n\nsetup\n\n\n\nKicking off my minimal site.\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\nNo matching items"
+    "text": "How to generate task simulations for text based RL\nHow GRPO works + Equations\nCode - implementing GRPO from scratch\nSupervised finetuning\n10 key points exclusive\nCaveat:\n5 is for people who want the TLDR on picking config for TRL verifiers and Unsloth (not interested on coding things from scratch)"
+  },
+  {
+    "objectID": "blog/posts/GRPO/GRPO-Huggingface.html#outline",
+    "href": "blog/posts/GRPO/GRPO-Huggingface.html#outline",
+    "title": "GRPO - AVB",
+    "section": "",
+    "text": "How to generate task simulations for text based RL\nHow GRPO works + Equations\nCode - implementing GRPO from scratch\nSupervised finetuning\n10 key points exclusive\nCaveat:\n5 is for people who want the TLDR on picking config for TRL verifiers and Unsloth (not interested on coding things from scratch)"
+  },
+  {
+    "objectID": "blog/posts/GRPO/GRPO-Huggingface.html#simulating-tasks",
+    "href": "blog/posts/GRPO/GRPO-Huggingface.html#simulating-tasks",
+    "title": "GRPO - AVB",
+    "section": "1. Simulating Tasks",
+    "text": "1. Simulating Tasks\n\nto do RL we need tasks\n\n\nSyllogism\nPremise 1\nPremise 2\nConclusion\n\n\nPropositional Logic Task\nHarder\n\nReasoning Gym"
+  },
+  {
+    "objectID": "blog/posts/GRPO/GRPO-Huggingface.html#reasoning-gym-library---rewards-telegraphic-summary",
+    "href": "blog/posts/GRPO/GRPO-Huggingface.html#reasoning-gym-library---rewards-telegraphic-summary",
+    "title": "GRPO - AVB",
+    "section": "Reasoning Gym Library - Rewards (Telegraphic Summary)",
+    "text": "Reasoning Gym Library - Rewards (Telegraphic Summary)\nCore Function:\nreasoning_gym.create_dataset() → generates propositional logic examples\nMakes prompt creation/validation easy\nSystem Architecture:\nLLM generates: &lt;think&gt;reasoning&lt;/think&gt; &lt;answer&gt;result&lt;/answer&gt;\nExtract function: regex pulls answers from XML tags\nScore function: +1 reward for correct, 0 for incorrect\nTesting Flow:\nLoop through dataset questions\nGenerate LLM response\nExtract answer via regex\nScore correctness\nResults by Model:\nManual Input: ✅ Works correctly\nGPT-4.1 Mini: ✅\n\nSolid responses\nFollows XML format\nNo additional training needed\n\nSmallLM135M (135M params): ❌\n\nFlawed reasoning\nIgnores XML instruction format\nCan’t extract answers → can’t score\n\nNext: Reinforcement learning to improve small model performance"
+  },
+  {
+    "objectID": "blog/posts/GRPO/GRPO-Huggingface.html#grpo-visually-explained",
+    "href": "blog/posts/GRPO/GRPO-Huggingface.html#grpo-visually-explained",
+    "title": "GRPO - AVB",
+    "section": "GRPO visually explained",
+    "text": "GRPO visually explained\n\nTwo Major Phases:\n\nExperience Collection → LLM interacts, fills buffer\nTraining → Update model weights for better rewards\n\nExperience Collection Phase\n\n\nStep-by-Step:\n\nSample batch → e.g., 2 questions from environment\nTokenize + Generate → Multiple responses via high temperature sampling\nDetokenize → Convert back to string responses\nScore → Environment generates reward for each response\n✅ Correct + proper format = high rewards\n❌ Incorrect/wrong format = low rewards\n\nAdvantage Calculation:\n\nStandardize rewards → zero mean, std dev = 1\nGroup Relative = relative advantage vs other responses to same question\nWhy called “Group Relative Policy Optimization”\n\nBuffer Storage (4 components per experience):\n\nFull sequence → system prompt + question + LLM answer\nResponse mask → binary indicator of LLM-generated tokens\nGroup relative advantage → standardized reward score\nLog probabilities → of generated tokens (used in training phase)\n\nNext: Training phase uses these stored experiences to update model weights"
+  },
+  {
+    "objectID": "blog/posts/GRPO/GRPO-Huggingface.html#policy-optimization-ppo-loss-telegraphic",
+    "href": "blog/posts/GRPO/GRPO-Huggingface.html#policy-optimization-ppo-loss-telegraphic",
+    "title": "GRPO - AVB",
+    "section": "Policy Optimization & PPO Loss (Telegraphic)",
+    "text": "Policy Optimization & PPO Loss (Telegraphic)\nCore Objective: Maximize Policy Gradient\nEquation Breakdown:\nFirst Σ → loops over G responses per question\nSecond Σ → loops over tokens (t=1 to length) in each response\nResult: Nested loop through every token in batch\n\nKey Components\nπ(θ) × A_it:\nA_it = advantage of each token\nThe easiest way to assign advantage to each token is..\nSimple version: Copy response advantage to all tokens\nLogic: Every token equally responsible for correct answer\nExample: +1 response advantage → +1 for each token\nπ term (Probability):\nProbability of token t in response i\nGiven: question Q + previous tokens (autoregressive)\n\n\nTraining Logic\nFixed: Advantages (from environment rewards) Variable: Token probabilities (from LLM)\nTo maximize objective:\n↑ Probability of tokens with positive advantage\n↓ Probability of tokens with negative advantage\n\n\nAdvanced Components\nImportance Sampling (π/π_old):\nπ_old = policy during experience collection\nπ = current training policy\nReweights advantages between old/new networks\nClipping Term:\nPurpose: Regularization - prevents extreme weight updates\nConstraint: Ratio clamped between (1-ε, 1+ε)\nEffect: “Don’t change weights too quickly”\nResult: Model learns to generate tokens → higher advantages → correct answers\nNext: Code implementation"
+  },
+  {
+    "objectID": "blog/posts/GRPO/GRPO-Huggingface.html#grpo-from-scratch",
+    "href": "blog/posts/GRPO/GRPO-Huggingface.html#grpo-from-scratch",
+    "title": "GRPO - AVB",
+    "section": "GRPO from Scratch",
+    "text": "GRPO from Scratch\nGRPO from Scratch"
+  },
+  {
+    "objectID": "notes/index.html",
+    "href": "notes/index.html",
+    "title": "Notes",
+    "section": "",
+    "text": "Quick notes and scratchpads:\n\nKeep short, linkable snippets here.\nUse folders in notes/ if you want multiple pages."
   },
   {
     "objectID": "index.html",
@@ -56,11 +105,11 @@
     "text": "Latest posts\nA few recent notes and writing.\n\n\nlisting: contents: blog/posts sort: “date desc” max-items: 3 type: default\n\n\nBuilt with Quarto and deployed on GitHub Pages."
   },
   {
-    "objectID": "notes/index.html",
-    "href": "notes/index.html",
-    "title": "Notes",
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
     "section": "",
-    "text": "Quick notes and scratchpads:\n\nKeep short, linkable snippets here.\nUse folders in notes/ if you want multiple pages."
+    "text": "Browse my posts below.\nUse categories/tags to filter topics.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nGRPO - AVB\n\n\n\ntrue\n\nreinforcement-learning\n\ngrpo\n\n\n\nGuide on generating task simulations for text-based RL and GRPO implementation\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nHello, world\n\n\n\ntrue\n\nmeta\n\nsetup\n\n\n\nKicking off my minimal site.\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/posts/hello-world/index.html",

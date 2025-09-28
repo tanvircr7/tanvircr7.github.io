@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-08-27">
+<meta name="description" content="Guide on generating task simulations for text-based RL and GRPO implementation">
 
-<title>Blog – Tanvir Hasan</title>
+<title>GRPO - AVB – Tanvir Hasan</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,29 +25,29 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3adfcd531744e6f441f8cef34e1acc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-af8de5c3824ba46c85aa2526d3b5271b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-3adfcd531744e6f441f8cef34e1acc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-3adfcd531744e6f441f8cef34e1acc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-af8de5c3824ba46c85aa2526d3b5271b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-3adfcd531744e6f441f8cef34e1acc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,9 +85,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: [{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: [],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -134,8 +136,8 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../styles.css">
-<link rel="alternate" type="application/rss+xml" title="Tanvir Hasan" href="index.xml" data-external="1"></head>
+<link rel="stylesheet" href="../../../styles.css">
+</head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
@@ -306,7 +308,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Tanvir Hasan</span>
     </a>
   </div>
@@ -317,25 +319,25 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../blog/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../notes/index.html"> 
+    <a class="nav-link" href="../../../notes/index.html"> 
 <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../taxonomy/index.html"> 
+    <a class="nav-link" href="../../../taxonomy/index.html"> 
 <span class="menu-text">Topics</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="../blog/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../../blog/index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -352,25 +354,58 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-cloud"><div class="category" data-category="Z3Jwbw=="><span class="quarto-category-count category-cloud-5">grpo</span></div><div class="category" data-category="bWV0YQ=="><span class="quarto-category-count category-cloud-5">meta</span></div><div class="category" data-category="cmVpbmZvcmNlbWVudC1sZWFybmluZw=="><span class="quarto-category-count category-cloud-5">reinforcement-learning</span></div><div class="category" data-category="c2V0dXA="><span class="quarto-category-count category-cloud-5">setup</span></div><div class="category" data-category="dHJ1ZQ=="><span class="quarto-category-count category-cloud-10">true</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#outline" id="toc-outline" class="nav-link active" data-scroll-target="#outline">Outline</a></li>
+  <li><a href="#simulating-tasks" id="toc-simulating-tasks" class="nav-link" data-scroll-target="#simulating-tasks">1. Simulating Tasks</a>
+  <ul class="collapse">
+  <li><a href="#syllogism" id="toc-syllogism" class="nav-link" data-scroll-target="#syllogism">Syllogism</a></li>
+  <li><a href="#propositional-logic-task" id="toc-propositional-logic-task" class="nav-link" data-scroll-target="#propositional-logic-task">Propositional Logic Task</a></li>
+  </ul></li>
+  <li><a href="#reasoning-gym-library---rewards-telegraphic-summary" id="toc-reasoning-gym-library---rewards-telegraphic-summary" class="nav-link" data-scroll-target="#reasoning-gym-library---rewards-telegraphic-summary">Reasoning Gym Library - Rewards (Telegraphic Summary)</a></li>
+  <li><a href="#grpo-visually-explained" id="toc-grpo-visually-explained" class="nav-link" data-scroll-target="#grpo-visually-explained">GRPO visually explained</a></li>
+  <li><a href="#policy-optimization-ppo-loss-telegraphic" id="toc-policy-optimization-ppo-loss-telegraphic" class="nav-link" data-scroll-target="#policy-optimization-ppo-loss-telegraphic">Policy Optimization &amp; PPO Loss (Telegraphic)</a>
+  <ul class="collapse">
+  <li><a href="#key-components" id="toc-key-components" class="nav-link" data-scroll-target="#key-components">Key Components</a></li>
+  <li><a href="#training-logic" id="toc-training-logic" class="nav-link" data-scroll-target="#training-logic">Training Logic</a></li>
+  <li><a href="#advanced-components" id="toc-advanced-components" class="nav-link" data-scroll-target="#advanced-components">Advanced Components</a></li>
+  </ul></li>
+  <li><a href="#grpo-from-scratch" id="toc-grpo-from-scratch" class="nav-link" data-scroll-target="#grpo-from-scratch">GRPO from Scratch</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/tanvircr7.github.io/blob/main/blog/posts/GRPO/GRPO-Huggingface.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog</h1>
+<h1 class="title">GRPO - AVB</h1>
   <div class="quarto-categories">
     <div class="quarto-category">true</div>
+    <div class="quarto-category">reinforcement-learning</div>
+    <div class="quarto-category">grpo</div>
   </div>
   </div>
 
+<div>
+  <div class="description">
+    Guide on generating task simulations for text-based RL and GRPO implementation
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 27, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -380,82 +415,152 @@ window.Quarto = {
 </header>
 
 
-<p>Browse my posts below.<br>
-Use categories/tags to filter topics.</p>
+<section id="outline" class="level2">
+<h2 class="anchored" data-anchor-id="outline">Outline</h2>
+<p>How to generate task simulations for text based RL</p>
+<p>How GRPO works + Equations</p>
+<p>Code - implementing GRPO from scratch</p>
+<p>Supervised finetuning</p>
+<p>10 key points exclusive</p>
+<p><strong>Caveat:</strong></p>
+<p>5 is for people who want the TLDR on picking config for TRL verifiers and Unsloth (not interested on coding things from scratch)</p>
+</section>
+<section id="simulating-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="simulating-tasks">1. Simulating Tasks</h2>
+<blockquote class="blockquote">
+<p>to do RL we need tasks</p>
+</blockquote>
+<section id="syllogism" class="level3">
+<h3 class="anchored" data-anchor-id="syllogism">Syllogism</h3>
+<p>Premise 1</p>
+<p>Premise 2</p>
+<p>Conclusion</p>
+</section>
+<section id="propositional-logic-task" class="level3">
+<h3 class="anchored" data-anchor-id="propositional-logic-task">Propositional Logic Task</h3>
+<p>Harder</p>
+<blockquote class="blockquote">
+<p>Reasoning Gym</p>
+</blockquote>
+</section>
+</section>
+<section id="reasoning-gym-library---rewards-telegraphic-summary" class="level2">
+<h2 class="anchored" data-anchor-id="reasoning-gym-library---rewards-telegraphic-summary">Reasoning Gym Library - Rewards (Telegraphic Summary)</h2>
+<p><strong>Core Function:</strong></p>
+<p>reasoning_gym.create_dataset() → generates propositional logic examples</p>
+<p>Makes prompt creation/validation easy</p>
+<p><strong>System Architecture:</strong></p>
+<p>LLM generates: <code>&lt;think&gt;reasoning&lt;/think&gt; &lt;answer&gt;result&lt;/answer&gt;</code></p>
+<p>Extract function: regex pulls answers from XML tags</p>
+<p>Score function: +1 reward for correct, 0 for incorrect</p>
+<p><strong>Testing Flow:</strong></p>
+<p>Loop through dataset questions</p>
+<p>Generate LLM response</p>
+<p>Extract answer via regex</p>
+<p>Score correctness</p>
+<p><strong>Results by Model:</strong></p>
+<p><strong>Manual Input:</strong> ✅ Works correctly</p>
+<p><strong>GPT-4.1 Mini:</strong> ✅</p>
+<ul>
+<li>Solid responses</li>
+<li>Follows XML format</li>
+<li>No additional training needed</li>
+</ul>
+<p><strong>SmallLM135M (135M params):</strong> ❌</p>
+<ul>
+<li>Flawed reasoning</li>
+<li>Ignores XML instruction format</li>
+<li>Can’t extract answers → can’t score</li>
+</ul>
+<p><strong>Next:</strong> Reinforcement learning to improve small model performance</p>
+</section>
+<section id="grpo-visually-explained" class="level2">
+<h2 class="anchored" data-anchor-id="grpo-visually-explained">GRPO visually explained</h2>
+<blockquote class="blockquote">
+<p>Two Major Phases:</p>
+</blockquote>
+<p><strong>Experience Collection</strong> → LLM interacts, fills buffer</p>
+<p><strong>Training</strong> → Update model weights for better rewards</p>
+<blockquote class="blockquote">
+<p>Experience Collection Phase</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Step-by-Step:</p>
+</blockquote>
+<p><strong>Sample batch</strong> → e.g., 2 questions from environment</p>
+<p><strong>Tokenize + Generate</strong> → Multiple responses via high temperature sampling</p>
+<p><strong>Detokenize</strong> → Convert back to string responses</p>
+<p><strong>Score</strong> → Environment generates reward for each response</p>
+<p>✅ Correct + proper format = high rewards</p>
+<p>❌ Incorrect/wrong format = low rewards</p>
+<blockquote class="blockquote">
+<p>Advantage Calculation:</p>
+</blockquote>
+<p><strong>Standardize rewards</strong> → zero mean, std dev = 1</p>
+<p><strong>Group Relative</strong> = relative advantage vs other responses to same question</p>
+<p>Why called “Group Relative Policy Optimization”</p>
+<blockquote class="blockquote">
+<p>Buffer Storage (4 components per experience):</p>
+</blockquote>
+<p><strong>Full sequence</strong> → system prompt + question + LLM answer</p>
+<p><strong>Response mask</strong> → binary indicator of LLM-generated tokens</p>
+<p><strong>Group relative advantage</strong> → standardized reward score</p>
+<p><strong>Log probabilities</strong> → of generated tokens (used in training phase)</p>
+<blockquote class="blockquote">
+<p>Next: Training phase uses these stored experiences to update model weights</p>
+</blockquote>
+</section>
+<section id="policy-optimization-ppo-loss-telegraphic" class="level2">
+<h2 class="anchored" data-anchor-id="policy-optimization-ppo-loss-telegraphic">Policy Optimization &amp; PPO Loss (Telegraphic)</h2>
+<p><strong>Core Objective:</strong> Maximize Policy Gradient</p>
+<p><strong>Equation Breakdown:</strong></p>
+<p>First Σ → loops over G responses per question</p>
+<p>Second Σ → loops over tokens (t=1 to length) in each response</p>
+<p><strong>Result:</strong> Nested loop through every token in batch</p>
+<section id="key-components" class="level3">
+<h3 class="anchored" data-anchor-id="key-components">Key Components</h3>
+<p><strong>π(θ) × A_it:</strong></p>
+<p>A_it = advantage of each token</p>
+<p>The easiest way to assign advantage to each token is..</p>
+<p><strong>Simple version:</strong> Copy response advantage to all tokens</p>
+<p><strong>Logic:</strong> Every token equally responsible for correct answer</p>
+<p><strong>Example:</strong> +1 response advantage → +1 for each token</p>
+<p><strong>π term (Probability):</strong></p>
+<p>Probability of token t in response i</p>
+<p>Given: question Q + previous tokens (autoregressive)</p>
+</section>
+<section id="training-logic" class="level3">
+<h3 class="anchored" data-anchor-id="training-logic">Training Logic</h3>
+<p><strong>Fixed:</strong> Advantages (from environment rewards) <strong>Variable:</strong> Token probabilities (from LLM)</p>
+<p>To maximize objective:</p>
+<p>↑ Probability of tokens with positive advantage</p>
+<p>↓ Probability of tokens with negative advantage</p>
+</section>
+<section id="advanced-components" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-components">Advanced Components</h3>
+<p><strong>Importance Sampling (π/π_old):</strong></p>
+<p>π_old = policy during experience collection</p>
+<p>π = current training policy</p>
+<p>Reweights advantages between old/new networks</p>
+<p><strong>Clipping Term:</strong></p>
+<p><strong>Purpose:</strong> Regularization - prevents extreme weight updates</p>
+<p><strong>Constraint:</strong> Ratio clamped between (1-ε, 1+ε)</p>
+<p><strong>Effect:</strong> “Don’t change weights too quickly”</p>
+<p><strong>Result:</strong> Model learns to generate tokens → higher advantages → correct answers</p>
+<p><strong>Next:</strong> Code implementation</p>
+</section>
+</section>
+<section id="grpo-from-scratch" class="level2">
+<h2 class="anchored" data-anchor-id="grpo-from-scratch">GRPO from Scratch</h2>
+<p>GRPO from Scratch</p>
 
 
 
+</section>
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="dHJ1ZSUyQ3JlaW5mb3JjZW1lbnQtbGVhcm5pbmclMkNncnBv" data-listing-date-sort="1756270800000" data-listing-file-modified-sort="1759027701362" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
-<div class="thumbnail"><a href="../blog/posts/GRPO/GRPO-Huggingface.html" class="no-external">
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/GRPO/GRPO-Huggingface.html" class="no-external">GRPO - AVB</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJ1ZQ=='); return false;">true</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVpbmZvcmNlbWVudC1sZWFybmluZw=='); return false;">reinforcement-learning</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z3Jwbw=='); return false;">grpo</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/GRPO/GRPO-Huggingface.html" class="no-external">
-<p>Guide on generating task simulations for text-based RL and GRPO implementation</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/GRPO/GRPO-Huggingface.html" class="no-external">
-<div class="listing-date">
-Aug 27, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="dHJ1ZSUyQ21ldGElMkNzZXR1cA==" data-listing-date-sort="1756270800000" data-listing-file-modified-sort="1759025183114" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="30">
-<div class="thumbnail"><a href="../blog/posts/hello-world/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/hello-world/index.html" class="no-external">Hello, world</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJ1ZQ=='); return false;">true</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bWV0YQ=='); return false;">meta</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c2V0dXA='); return false;">setup</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/hello-world/index.html" class="no-external">
-<p>Kicking off my minimal site.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/hello-world/index.html" class="no-external">
-<div class="listing-date">
-Aug 27, 2025
-</div>
-</a>
-</div>
-</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->
@@ -879,7 +984,7 @@ Aug 27, 2025
     </div>   
     <div class="nav-footer-center">
 <p>© 2025 Mohammad Tanvir Hasan</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/tanvircr7.github.io/blob/main/blog/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tanvircr7.github.io/blob/main/blog/posts/GRPO/GRPO-Huggingface.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
@@ -889,5 +994,5 @@ Aug 27, 2025
 
 
 
-<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
