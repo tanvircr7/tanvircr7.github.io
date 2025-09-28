@@ -25,7 +25,7 @@
     "href": "index.html#research-focus",
     "title": "Tanvir Hasan",
     "section": "Research focus",
-    "text": "Research focus\n\nMulti-agent systems · coordination & evaluation\n\nReinforcement Learning · Agentic RL\nAI for Science · reproducible workflows & agents\n\nSecurity · model + data pipeline hardening"
+    "text": "Research focus\n\nMulti-agent systems · coordination & evaluation\n\nReinforcement Learning · agentic RL\nAI for Science · reproducible workflows & agents\n\nSecurity · model + data pipeline hardening"
   },
   {
     "objectID": "index.html#positions",
@@ -53,7 +53,7 @@
     "href": "index.html#latest-posts",
     "title": "Tanvir Hasan",
     "section": "Latest posts",
-    "text": "Latest posts\nA few recent notes and writing.\n```{.include} # Quarto directive-style listing (no shortcodes) {{&lt; listing path=\"blog/posts\" sort=\"date desc\" max-items=3 type=\"default\" &gt;}}"
+    "text": "Latest posts\nA few recent notes and writing.\n\n\nlisting: contents: blog/posts sort: “date desc” max-items: 3 type: default\n\n\nBuilt with Quarto and deployed on GitHub Pages."
   },
   {
     "objectID": "notes/index.html",
