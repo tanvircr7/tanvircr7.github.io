@@ -10,9 +10,14 @@
   {
     "listing": "/blog/index.html",
     "items": [
+      "/blog/posts/MLE-STAR/index.html",
       "/blog/posts/grpo/index.html",
       "/blog/posts/hello-world/index.html"
     ]
+  },
+  {
+    "listing": "/blog/posts/MLE-STAR/index.html",
+    "items": []
   },
   {
     "listing": "/blog/posts/hello-world/index.html",

@@ -56,11 +56,11 @@
     "text": "GRPO from Scratch\nGRPO from Scratch"
   },
   {
-    "objectID": "notes/index.html",
-    "href": "notes/index.html",
-    "title": "Notes",
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
     "section": "",
-    "text": "Quick notes and scratchpads:\n\nKeep short, linkable snippets here.\nUse folders in notes/ if you want multiple pages."
+    "text": "Browse my posts below.\nUse categories/tags to filter topics.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nMLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement\n\n\n\ntrue\n\nmachine-learning-engineering\n\nautomated-ml\n\nagents\n\nSWE-agents\n\nKaggle\n\n\n\nMLE-STAR achieves 64% accuracy on MLE-bench through search-driven targeted refinement\n\n\n\n\n\nSep 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nGRPO - AVB\n\n\n\ntrue\n\nreinforcement-learning\n\ngrpo\n\n\n\nGuide on generating task simulations for text-based RL and GRPO implementation\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nHello, world\n\n\n\ntrue\n\nmeta\n\nsetup\n\n\n\nKicking off my minimal site.\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -105,11 +105,74 @@
     "text": "Latest posts\nA few recent notes and writing.\n\n\nlisting: contents: blog/posts sort: “date desc” max-items: 3 type: default\n\n\nBuilt with Quarto and deployed on GitHub Pages."
   },
   {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
+    "objectID": "notes/index.html",
+    "href": "notes/index.html",
+    "title": "Notes",
     "section": "",
-    "text": "Browse my posts below.\nUse categories/tags to filter topics.\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nGRPO - AVB\n\n\n\ntrue\n\nreinforcement-learning\n\ngrpo\n\n\n\nGuide on generating task simulations for text-based RL and GRPO implementation\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nHello, world\n\n\n\ntrue\n\nmeta\n\nsetup\n\n\n\nKicking off my minimal site.\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\nNo matching items"
+    "text": "Quick notes and scratchpads:\n\nKeep short, linkable snippets here.\nUse folders in notes/ if you want multiple pages."
+  },
+  {
+    "objectID": "blog/posts/MLE-STAR/index.html",
+    "href": "blog/posts/MLE-STAR/index.html",
+    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+    "section": "",
+    "text": "Agents can auto implement models via code generation.\nBut existing ways use: - Inherent knowledge - Coarse exploration strategies (modify code structure AT ONCE) - Limits ability to select task specific models - Limits deep exploration within specific components (deeper on feature engineering)\nMLE-STAR: - External knowledge via search engine - Forms initial solution - Refines it by targeting specific components - Exploration from Ablation Studies - Novel ensembling method (suggested by MLE-STAR itself)\nResults: MLE-bench Lite (kaggle comps) acc 64%"
+  },
+  {
+    "objectID": "blog/posts/MLE-STAR/index.html#abstract",
+    "href": "blog/posts/MLE-STAR/index.html#abstract",
+    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+    "section": "",
+    "text": "Agents can auto implement models via code generation.\nBut existing ways use: - Inherent knowledge - Coarse exploration strategies (modify code structure AT ONCE) - Limits ability to select task specific models - Limits deep exploration within specific components (deeper on feature engineering)\nMLE-STAR: - External knowledge via search engine - Forms initial solution - Refines it by targeting specific components - Exploration from Ablation Studies - Novel ensembling method (suggested by MLE-STAR itself)\nResults: MLE-bench Lite (kaggle comps) acc 64%"
+  },
+  {
+    "objectID": "blog/posts/MLE-STAR/index.html#introduction",
+    "href": "blog/posts/MLE-STAR/index.html#introduction",
+    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+    "section": "Introduction",
+    "text": "Introduction\nMLE agents: (Guo et al., 2024; Hong et al., 2024; Jiang et al., 2025)\nEvaluated on: MLE-bench’s Kaggle competitions (Chan et al., 2025)\nBeats: - Jiang et al 2025 - AIDE - Guo et al. 2024 - DS Agent"
+  },
+  {
+    "objectID": "blog/posts/MLE-STAR/index.html#the-core-idea",
+    "href": "blog/posts/MLE-STAR/index.html#the-core-idea",
+    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+    "section": "1. The Core Idea",
+    "text": "1. The Core Idea\nSearch-assisted knowledge + Component-wise optimization + Smart ensembling"
+  },
+  {
+    "objectID": "blog/posts/MLE-STAR/index.html#the-process-flow",
+    "href": "blog/posts/MLE-STAR/index.html#the-process-flow",
+    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+    "section": "2. The Process Flow",
+    "text": "2. The Process Flow\n\nInitial Code Generation\n\nCreates first attempt at solution\nUses Google Search to look up modern, relevant ML techniques for that problem type\n\n\n\nIdentify Most Important Code Components\nCode components: data preprocessing, feature engineering, model architecture, ensemble building\nAblation study approach: - “Turn off or replace one component at a time” - “See how much performance drops” - “The one that hurts performance most = most important”\n\n\nTargeted Code Refinement\n\nPicks most impactful component\nSearches for ways to improve ONLY that part (not rewriting everything)\n\nImprovement ideas from: - Past failed attempts (learning from mistakes) - Search results - New code generation\n\n\nRepeat for Other Components\n\nAfter improving one part → moves to another\nCycle continues until results stop improving significantly\n\n\n\nEnsembling\nNormal ensembling: Combining multiple trained models (voting, averaging, stacking)\nMLE-STAR approach: - Generates multiple complete solutions - Designs its own ensemble method to merge them (not basic “majority vote”) - Tests and refines ensemble method iteratively"
+  },
+  {
+    "objectID": "blog/posts/MLE-STAR/index.html#why-this-is-special",
+    "href": "blog/posts/MLE-STAR/index.html#why-this-is-special",
+    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+    "section": "3. Why This Is Special",
+    "text": "3. Why This Is Special\n\nSearch-assisted: Doesn’t rely only on built-in knowledge → actively pulls from internet\nComponent-wise optimization: Most systems try to improve everything at once; MLE-STAR focuses on parts that matter most\nSmart ensembling: Custom combination methods vs “one model to rule them all”\nPerformance proof: More than doubled rate of top-medal finishes vs previous best baseline"
+  },
+  {
+    "objectID": "blog/posts/MLE-STAR/index.html#key-terms",
+    "href": "blog/posts/MLE-STAR/index.html#key-terms",
+    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+    "section": "4. Key Terms",
+    "text": "4. Key Terms\n\nEnsembling: Combining multiple models’ predictions to improve accuracy\nAblation study: Testing component importance by removing/altering it and measuring performance change\nFeature engineering: Creating/transforming input features to help model learn better\nPipeline component: Modular part of ML workflow (preprocessing, model, post-processing)\nRefinement: Iteratively improving specific code parts vs rewriting whole thing"
+  },
+  {
+    "objectID": "blog/posts/MLE-STAR/index.html#related-work",
+    "href": "blog/posts/MLE-STAR/index.html#related-work",
+    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+    "section": "Related Work",
+    "text": "Related Work\n\nReAct (Yao) - Reasoning + Action\nHuggingGPT (Shen) - Multi-agent orchestration\nVoyager - Minecraft exploration strategies\nAlphaCode - Code generation\nAutoML - Predefined search spaces need domain knowledge\nMLAB (Huang) - ML automation\nOpenHands (Wang) - Code agents\nAIDE (Jiang) - Candidate solutions in tree structure\nDS-Agent - Case-based reasoning for Kaggle\n\nNeed: Effective exploration strategies directly in Code Space"
+  },
+  {
+    "objectID": "blog/posts/MLE-STAR/index.html#results",
+    "href": "blog/posts/MLE-STAR/index.html#results",
+    "title": "MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement",
+    "section": "Results",
+    "text": "Results\n64% accuracy on MLE-bench Lite Kaggle competitions\nBeats existing baselines including AIDE and DS-Agent\nMore than doubled rate of top-medal finishes"
   },
   {
     "objectID": "blog/posts/hello-world/index.html",

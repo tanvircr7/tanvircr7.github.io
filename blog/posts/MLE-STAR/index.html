@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-09-28">
+<meta name="description" content="MLE-STAR achieves 64% accuracy on MLE-bench through search-driven targeted refinement">
 
-<title>Blog – Tanvir Hasan</title>
+<title>MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement – Tanvir Hasan</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,29 +25,29 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3adfcd531744e6f441f8cef34e1acc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-af8de5c3824ba46c85aa2526d3b5271b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-3adfcd531744e6f441f8cef34e1acc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-3adfcd531744e6f441f8cef34e1acc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-af8de5c3824ba46c85aa2526d3b5271b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-3adfcd531744e6f441f8cef34e1acc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,9 +85,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: [{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: [],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -134,8 +136,8 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../styles.css">
-<link rel="alternate" type="application/rss+xml" title="Tanvir Hasan" href="index.xml" data-external="1"></head>
+<link rel="stylesheet" href="../../../styles.css">
+</head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
@@ -306,7 +308,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Tanvir Hasan</span>
     </a>
   </div>
@@ -317,25 +319,25 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../blog/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../notes/index.html"> 
+    <a class="nav-link" href="../../../notes/index.html"> 
 <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../taxonomy/index.html"> 
+    <a class="nav-link" href="../../../taxonomy/index.html"> 
 <span class="menu-text">Topics</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="../blog/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../../blog/index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -352,25 +354,61 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-cloud"><div class="category" data-category="YWdlbnRz"><span class="quarto-category-count category-cloud-4">agents</span></div><div class="category" data-category="YXV0b21hdGVkLW1s"><span class="quarto-category-count category-cloud-4">automated-ml</span></div><div class="category" data-category="Z3Jwbw=="><span class="quarto-category-count category-cloud-4">grpo</span></div><div class="category" data-category="S2FnZ2xl"><span class="quarto-category-count category-cloud-4">Kaggle</span></div><div class="category" data-category="bWFjaGluZS1sZWFybmluZy1lbmdpbmVlcmluZw=="><span class="quarto-category-count category-cloud-4">machine-learning-engineering</span></div><div class="category" data-category="bWV0YQ=="><span class="quarto-category-count category-cloud-4">meta</span></div><div class="category" data-category="cmVpbmZvcmNlbWVudC1sZWFybmluZw=="><span class="quarto-category-count category-cloud-4">reinforcement-learning</span></div><div class="category" data-category="c2V0dXA="><span class="quarto-category-count category-cloud-4">setup</span></div><div class="category" data-category="U1dFLWFnZW50cw=="><span class="quarto-category-count category-cloud-4">SWE-agents</span></div><div class="category" data-category="dHJ1ZQ=="><span class="quarto-category-count category-cloud-10">true</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#the-core-idea" id="toc-the-core-idea" class="nav-link" data-scroll-target="#the-core-idea">1. The Core Idea</a></li>
+  <li><a href="#the-process-flow" id="toc-the-process-flow" class="nav-link" data-scroll-target="#the-process-flow">2. The Process Flow</a>
+  <ul class="collapse">
+  <li><a href="#initial-code-generation" id="toc-initial-code-generation" class="nav-link" data-scroll-target="#initial-code-generation">Initial Code Generation</a></li>
+  <li><a href="#identify-most-important-code-components" id="toc-identify-most-important-code-components" class="nav-link" data-scroll-target="#identify-most-important-code-components">Identify Most Important Code Components</a></li>
+  <li><a href="#targeted-code-refinement" id="toc-targeted-code-refinement" class="nav-link" data-scroll-target="#targeted-code-refinement">Targeted Code Refinement</a></li>
+  <li><a href="#repeat-for-other-components" id="toc-repeat-for-other-components" class="nav-link" data-scroll-target="#repeat-for-other-components">Repeat for Other Components</a></li>
+  <li><a href="#ensembling" id="toc-ensembling" class="nav-link" data-scroll-target="#ensembling">Ensembling</a></li>
+  </ul></li>
+  <li><a href="#why-this-is-special" id="toc-why-this-is-special" class="nav-link" data-scroll-target="#why-this-is-special">3. Why This Is Special</a></li>
+  <li><a href="#key-terms" id="toc-key-terms" class="nav-link" data-scroll-target="#key-terms">4. Key Terms</a></li>
+  <li><a href="#related-work" id="toc-related-work" class="nav-link" data-scroll-target="#related-work">Related Work</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/tanvircr7.github.io/blob/main/blog/posts/MLE-STAR/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog</h1>
+<h1 class="title">MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement</h1>
   <div class="quarto-categories">
     <div class="quarto-category">true</div>
+    <div class="quarto-category">machine-learning-engineering</div>
+    <div class="quarto-category">automated-ml</div>
+    <div class="quarto-category">agents</div>
+    <div class="quarto-category">SWE-agents</div>
+    <div class="quarto-category">Kaggle</div>
   </div>
   </div>
 
+<div>
+  <div class="description">
+    MLE-STAR achieves 64% accuracy on MLE-bench through search-driven targeted refinement
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 28, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -380,119 +418,105 @@ window.Quarto = {
 </header>
 
 
-<p>Browse my posts below.<br>
-Use categories/tags to filter topics.</p>
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>Agents can auto implement models via code generation.</p>
+<p>But existing ways use: - Inherent knowledge - Coarse exploration strategies (modify code structure AT ONCE) - Limits ability to select task specific models - Limits deep exploration within specific components (deeper on feature engineering)</p>
+<p><strong>MLE-STAR:</strong> - External knowledge via search engine - Forms initial solution - Refines it by targeting specific components - Exploration from Ablation Studies - Novel ensembling method (suggested by MLE-STAR itself)</p>
+<p><strong>Results:</strong> MLE-bench Lite (kaggle comps) acc 64%</p>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p><strong>MLE agents:</strong> (Guo et al., 2024; Hong et al., 2024; Jiang et al., 2025)</p>
+<p><strong>Evaluated on:</strong> MLE-bench’s Kaggle competitions (Chan et al., 2025)</p>
+<p><strong>Beats:</strong> - Jiang et al 2025 - AIDE - Guo et al.&nbsp;2024 - DS Agent</p>
+</section>
+<section id="the-core-idea" class="level2">
+<h2 class="anchored" data-anchor-id="the-core-idea">1. The Core Idea</h2>
+<p>Search-assisted knowledge + Component-wise optimization + Smart ensembling</p>
+</section>
+<section id="the-process-flow" class="level2">
+<h2 class="anchored" data-anchor-id="the-process-flow">2. The Process Flow</h2>
+<section id="initial-code-generation" class="level3">
+<h3 class="anchored" data-anchor-id="initial-code-generation">Initial Code Generation</h3>
+<ul>
+<li>Creates first attempt at solution</li>
+<li>Uses Google Search to look up modern, relevant ML techniques for that problem type</li>
+</ul>
+</section>
+<section id="identify-most-important-code-components" class="level3">
+<h3 class="anchored" data-anchor-id="identify-most-important-code-components">Identify Most Important Code Components</h3>
+<p>Code components: data preprocessing, feature engineering, model architecture, ensemble building</p>
+<p><strong>Ablation study approach:</strong> - “Turn off or replace one component at a time” - “See how much performance drops” - “The one that hurts performance most = most important”</p>
+</section>
+<section id="targeted-code-refinement" class="level3">
+<h3 class="anchored" data-anchor-id="targeted-code-refinement">Targeted Code Refinement</h3>
+<ul>
+<li>Picks most impactful component</li>
+<li>Searches for ways to improve ONLY that part (not rewriting everything)</li>
+</ul>
+<p><strong>Improvement ideas from:</strong> - Past failed attempts (learning from mistakes) - Search results - New code generation</p>
+</section>
+<section id="repeat-for-other-components" class="level3">
+<h3 class="anchored" data-anchor-id="repeat-for-other-components">Repeat for Other Components</h3>
+<ul>
+<li>After improving one part → moves to another</li>
+<li>Cycle continues until results stop improving significantly</li>
+</ul>
+</section>
+<section id="ensembling" class="level3">
+<h3 class="anchored" data-anchor-id="ensembling">Ensembling</h3>
+<p><strong>Normal ensembling:</strong> Combining multiple trained models (voting, averaging, stacking)</p>
+<p><strong>MLE-STAR approach:</strong> - Generates multiple complete solutions - Designs its own ensemble method to merge them (not basic “majority vote”) - Tests and refines ensemble method iteratively</p>
+</section>
+</section>
+<section id="why-this-is-special" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-is-special">3. Why This Is Special</h2>
+<ul>
+<li><strong>Search-assisted:</strong> Doesn’t rely only on built-in knowledge → actively pulls from internet</li>
+<li><strong>Component-wise optimization:</strong> Most systems try to improve everything at once; MLE-STAR focuses on parts that matter most</li>
+<li><strong>Smart ensembling:</strong> Custom combination methods vs “one model to rule them all”</li>
+<li><strong>Performance proof:</strong> More than doubled rate of top-medal finishes vs previous best baseline</li>
+</ul>
+</section>
+<section id="key-terms" class="level2">
+<h2 class="anchored" data-anchor-id="key-terms">4. Key Terms</h2>
+<ul>
+<li><strong>Ensembling:</strong> Combining multiple models’ predictions to improve accuracy</li>
+<li><strong>Ablation study:</strong> Testing component importance by removing/altering it and measuring performance change</li>
+<li><strong>Feature engineering:</strong> Creating/transforming input features to help model learn better</li>
+<li><strong>Pipeline component:</strong> Modular part of ML workflow (preprocessing, model, post-processing)</li>
+<li><strong>Refinement:</strong> Iteratively improving specific code parts vs rewriting whole thing</li>
+</ul>
+</section>
+<section id="related-work" class="level2">
+<h2 class="anchored" data-anchor-id="related-work">Related Work</h2>
+<ul>
+<li><strong>ReAct</strong> (Yao) - Reasoning + Action</li>
+<li><strong>HuggingGPT</strong> (Shen) - Multi-agent orchestration</li>
+<li><strong>Voyager</strong> - Minecraft exploration strategies</li>
+<li><strong>AlphaCode</strong> - Code generation</li>
+<li><strong>AutoML</strong> - Predefined search spaces need domain knowledge</li>
+<li><strong>MLAB</strong> (Huang) - ML automation</li>
+<li><strong>OpenHands</strong> (Wang) - Code agents</li>
+<li><strong>AIDE</strong> (Jiang) - Candidate solutions in tree structure</li>
+<li><strong>DS-Agent</strong> - Case-based reasoning for Kaggle</li>
+</ul>
+<p><strong>Need:</strong> Effective exploration strategies directly in Code Space</p>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>64% accuracy on MLE-bench Lite Kaggle competitions</p>
+<p>Beats existing baselines including AIDE and DS-Agent</p>
+<p>More than doubled rate of top-medal finishes</p>
 
 
 
+</section>
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="dHJ1ZSUyQ21hY2hpbmUtbGVhcm5pbmctZW5naW5lZXJpbmclMkNhdXRvbWF0ZWQtbWwlMkNhZ2VudHMlMkNTV0UtYWdlbnRzJTJDS2FnZ2xl" data-listing-date-sort="1759035600000" data-listing-file-modified-sort="1759041339841" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="454">
-<div class="thumbnail"><a href="../blog/posts/MLE-STAR/index.html" class="no-external">
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/MLE-STAR/index.html" class="no-external">MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJ1ZQ=='); return false;">true</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bWFjaGluZS1sZWFybmluZy1lbmdpbmVlcmluZw=='); return false;">machine-learning-engineering</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YXV0b21hdGVkLW1s'); return false;">automated-ml</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YWdlbnRz'); return false;">agents</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U1dFLWFnZW50cw=='); return false;">SWE-agents</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('S2FnZ2xl'); return false;">Kaggle</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/MLE-STAR/index.html" class="no-external">
-<p>MLE-STAR achieves 64% accuracy on MLE-bench through search-driven targeted refinement</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/MLE-STAR/index.html" class="no-external">
-<div class="listing-date">
-Sep 28, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="dHJ1ZSUyQ3JlaW5mb3JjZW1lbnQtbGVhcm5pbmclMkNncnBv" data-listing-date-sort="1756270800000" data-listing-file-modified-sort="1759029254361" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
-<div class="thumbnail"><a href="../blog/posts/grpo/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/grpo/index.html" class="no-external">GRPO - AVB</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJ1ZQ=='); return false;">true</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVpbmZvcmNlbWVudC1sZWFybmluZw=='); return false;">reinforcement-learning</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z3Jwbw=='); return false;">grpo</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/grpo/index.html" class="no-external">
-<p>Guide on generating task simulations for text-based RL and GRPO implementation</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/grpo/index.html" class="no-external">
-<div class="listing-date">
-Aug 27, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="dHJ1ZSUyQ21ldGElMkNzZXR1cA==" data-listing-date-sort="1756270800000" data-listing-file-modified-sort="1759025183114" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="30">
-<div class="thumbnail"><a href="../blog/posts/hello-world/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/posts/hello-world/index.html" class="no-external">Hello, world</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJ1ZQ=='); return false;">true</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bWV0YQ=='); return false;">meta</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c2V0dXA='); return false;">setup</div>
-
-</div>
-<div class="delink listing-description"><a href="../blog/posts/hello-world/index.html" class="no-external">
-<p>Kicking off my minimal site.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../blog/posts/hello-world/index.html" class="no-external">
-<div class="listing-date">
-Aug 27, 2025
-</div>
-</a>
-</div>
-</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->
@@ -916,7 +940,7 @@ Aug 27, 2025
     </div>   
     <div class="nav-footer-center">
 <p>© 2025 Mohammad Tanvir Hasan</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/tanvircr7.github.io/blob/main/blog/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tanvircr7.github.io/blob/main/blog/posts/MLE-STAR/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
@@ -926,5 +950,5 @@ Aug 27, 2025
 
 
 
-<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

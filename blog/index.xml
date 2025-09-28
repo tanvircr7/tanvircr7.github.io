@@ -10,7 +10,127 @@
 <atom:link href="https://tanvircr7.github.io/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>Personal site and blog</description>
 <generator>quarto-1.7.33</generator>
-<lastBuildDate>Wed, 27 Aug 2025 05:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 28 Sep 2025 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>MLE-STAR: Machine Learning Engineering Agent via Search and Targeted Refinement</title>
+  <link>https://tanvircr7.github.io/blog/posts/MLE-STAR/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>Agents can auto implement models via code generation.</p>
+<p>But existing ways use: - Inherent knowledge - Coarse exploration strategies (modify code structure AT ONCE) - Limits ability to select task specific models - Limits deep exploration within specific components (deeper on feature engineering)</p>
+<p><strong>MLE-STAR:</strong> - External knowledge via search engine - Forms initial solution - Refines it by targeting specific components - Exploration from Ablation Studies - Novel ensembling method (suggested by MLE-STAR itself)</p>
+<p><strong>Results:</strong> MLE-bench Lite (kaggle comps) acc 64%</p>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p><strong>MLE agents:</strong> (Guo et al., 2024; Hong et al., 2024; Jiang et al., 2025)</p>
+<p><strong>Evaluated on:</strong> MLE-bench’s Kaggle competitions (Chan et al., 2025)</p>
+<p><strong>Beats:</strong> - Jiang et al 2025 - AIDE - Guo et al.&nbsp;2024 - DS Agent</p>
+</section>
+<section id="the-core-idea" class="level2">
+<h2 class="anchored" data-anchor-id="the-core-idea">1. The Core Idea</h2>
+<p>Search-assisted knowledge + Component-wise optimization + Smart ensembling</p>
+</section>
+<section id="the-process-flow" class="level2">
+<h2 class="anchored" data-anchor-id="the-process-flow">2. The Process Flow</h2>
+<section id="initial-code-generation" class="level3">
+<h3 class="anchored" data-anchor-id="initial-code-generation">Initial Code Generation</h3>
+<ul>
+<li>Creates first attempt at solution</li>
+<li>Uses Google Search to look up modern, relevant ML techniques for that problem type</li>
+</ul>
+</section>
+<section id="identify-most-important-code-components" class="level3">
+<h3 class="anchored" data-anchor-id="identify-most-important-code-components">Identify Most Important Code Components</h3>
+<p>Code components: data preprocessing, feature engineering, model architecture, ensemble building</p>
+<p><strong>Ablation study approach:</strong> - “Turn off or replace one component at a time” - “See how much performance drops” - “The one that hurts performance most = most important”</p>
+</section>
+<section id="targeted-code-refinement" class="level3">
+<h3 class="anchored" data-anchor-id="targeted-code-refinement">Targeted Code Refinement</h3>
+<ul>
+<li>Picks most impactful component</li>
+<li>Searches for ways to improve ONLY that part (not rewriting everything)</li>
+</ul>
+<p><strong>Improvement ideas from:</strong> - Past failed attempts (learning from mistakes) - Search results - New code generation</p>
+</section>
+<section id="repeat-for-other-components" class="level3">
+<h3 class="anchored" data-anchor-id="repeat-for-other-components">Repeat for Other Components</h3>
+<ul>
+<li>After improving one part → moves to another</li>
+<li>Cycle continues until results stop improving significantly</li>
+</ul>
+</section>
+<section id="ensembling" class="level3">
+<h3 class="anchored" data-anchor-id="ensembling">Ensembling</h3>
+<p><strong>Normal ensembling:</strong> Combining multiple trained models (voting, averaging, stacking)</p>
+<p><strong>MLE-STAR approach:</strong> - Generates multiple complete solutions - Designs its own ensemble method to merge them (not basic “majority vote”) - Tests and refines ensemble method iteratively</p>
+</section>
+</section>
+<section id="why-this-is-special" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-is-special">3. Why This Is Special</h2>
+<ul>
+<li><strong>Search-assisted:</strong> Doesn’t rely only on built-in knowledge → actively pulls from internet</li>
+<li><strong>Component-wise optimization:</strong> Most systems try to improve everything at once; MLE-STAR focuses on parts that matter most</li>
+<li><strong>Smart ensembling:</strong> Custom combination methods vs “one model to rule them all”</li>
+<li><strong>Performance proof:</strong> More than doubled rate of top-medal finishes vs previous best baseline</li>
+</ul>
+</section>
+<section id="key-terms" class="level2">
+<h2 class="anchored" data-anchor-id="key-terms">4. Key Terms</h2>
+<ul>
+<li><strong>Ensembling:</strong> Combining multiple models’ predictions to improve accuracy</li>
+<li><strong>Ablation study:</strong> Testing component importance by removing/altering it and measuring performance change</li>
+<li><strong>Feature engineering:</strong> Creating/transforming input features to help model learn better</li>
+<li><strong>Pipeline component:</strong> Modular part of ML workflow (preprocessing, model, post-processing)</li>
+<li><strong>Refinement:</strong> Iteratively improving specific code parts vs rewriting whole thing</li>
+</ul>
+</section>
+<section id="related-work" class="level2">
+<h2 class="anchored" data-anchor-id="related-work">Related Work</h2>
+<ul>
+<li><strong>ReAct</strong> (Yao) - Reasoning + Action</li>
+<li><strong>HuggingGPT</strong> (Shen) - Multi-agent orchestration</li>
+<li><strong>Voyager</strong> - Minecraft exploration strategies</li>
+<li><strong>AlphaCode</strong> - Code generation</li>
+<li><strong>AutoML</strong> - Predefined search spaces need domain knowledge</li>
+<li><strong>MLAB</strong> (Huang) - ML automation</li>
+<li><strong>OpenHands</strong> (Wang) - Code agents</li>
+<li><strong>AIDE</strong> (Jiang) - Candidate solutions in tree structure</li>
+<li><strong>DS-Agent</strong> - Case-based reasoning for Kaggle</li>
+</ul>
+<p><strong>Need:</strong> Effective exploration strategies directly in Code Space</p>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>64% accuracy on MLE-bench Lite Kaggle competitions</p>
+<p>Beats existing baselines including AIDE and DS-Agent</p>
+<p>More than doubled rate of top-medal finishes</p>
+
+
+
+</section>
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div> ]]></description>
+  <category>true</category>
+  <category>machine-learning-engineering</category>
+  <category>automated-ml</category>
+  <category>agents</category>
+  <category>SWE-agents</category>
+  <category>Kaggle</category>
+  <guid>https://tanvircr7.github.io/blog/posts/MLE-STAR/</guid>
+  <pubDate>Sun, 28 Sep 2025 05:00:00 GMT</pubDate>
+</item>
 <item>
   <title>GRPO - AVB</title>
   <link>https://tanvircr7.github.io/blog/posts/grpo/</link>
